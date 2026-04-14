@@ -35,9 +35,9 @@ const data = {
   },
   teams: [
     {
-      name: "Acme Inc",
+      name: "Nihongo Hub",
       logo: GalleryVerticalEnd,
-      plan: "Enterprise",
+      plan: "",
     }
     // ,
     // {
@@ -53,7 +53,7 @@ const data = {
   ],
   navMain: [
     {
-      title: "Cards",
+      title: "My Cards",
       url: "#",
       icon: SquareTerminal,
       isActive: true,
@@ -76,25 +76,25 @@ const data = {
         },
       ],
     },
-    // {
-    //   title: "Models",
-    //   url: "#",
-    //   icon: Bot,
-    //   items: [
-    //     {
-    //       title: "Genesis",
-    //       url: "#",
-    //     },
-    //     {
-    //       title: "Explorer",
-    //       url: "#",
-    //     },
-    //     {
-    //       title: "Quantum",
-    //       url: "#",
-    //     },
-    //   ],
-    // },
+    {
+      title: "Anki Cards",
+      url: "#",
+      icon: Bot,
+      items: [
+        {
+          title: "Genesis",
+          url: "#",
+        },
+        {
+          title: "Explorer",
+          url: "#",
+        },
+        {
+          title: "Quantum",
+          url: "#",
+        },
+      ],
+    },
     // {
     //   title: "Documentation",
     //   url: "#",

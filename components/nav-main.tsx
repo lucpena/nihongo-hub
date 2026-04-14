@@ -1,6 +1,6 @@
 "use client"
 
-import { ChevronRight, type LucideIcon } from "lucide-react"
+import { ChevronRight, HomeIcon, UploadIcon, type LucideIcon } from "lucide-react"
 
 import {
   Collapsible,
@@ -16,7 +16,6 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
-  SidebarMenuSeparator,
 } from "@/components/ui/sidebar"
 
 export function NavMain({
@@ -37,9 +36,12 @@ export function NavMain({
     <SidebarGroup>
       {/* <SidebarGroupLabel>Platform</SidebarGroupLabel> */}
       <SidebarMenuItem>
-        <SidebarMenuButton className="text-sidebar-foreground/70 cursor-pointer">
-          {/* <MoreHorizontal className="text-sidebar-foreground/70" /> */}
-          <span className="text-xl font-medium underline underline-offset-4 hover:animate-pulse">Home</span>
+        <SidebarMenuButton className="text-sidebar-foreground/70 cursor-pointer border mb-5">
+          <HomeIcon className="text-sidebar-foreground/70" />
+          <span className="text-lg font-medium underline-offset-4 hover:animate-pulse">Home</span>
+        </SidebarMenuButton><SidebarMenuButton className="text-sidebar-foreground/70 cursor-pointer border mb-5">
+          <UploadIcon className="text-sidebar-foreground/70" />
+          <span className="text-lg font-medium underline-offset-4 hover:animate-pulse">Upload Cards</span>
         </SidebarMenuButton>
       </SidebarMenuItem>
       
