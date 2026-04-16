@@ -1,27 +1,77 @@
+"use client"
+
+import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
   Field,
-  FieldDescription,
   FieldGroup,
   FieldLabel,
-  FieldSeparator,
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
+
 
 export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"form">) {
+  // Component Memory
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const router = useRouter();
+
+  // Login logic
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({email, password  }),
+      });
+
+      const data = await res.json();
+
+      if(!res.ok) {
+        throw new Error(data.error || "Error during login.")
+      }
+
+      // Success
+      router.push("/");
+      router.refresh(); // Force Next to refresh navegation
+
+    } catch (error: any) {
+      setError(error.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
   return (
-    <form className={cn("flex flex-col gap-6", className)} {...props}>
+    <form onSubmit={handleSubmit} className={cn("flex flex-col gap-6", className)} {...props}>
       <FieldGroup>
         <div className="flex flex-col items-center gap-1 text-center">
           <h1 className="text-2xl font-bold">Login to your account</h1>
           <p className="text-sm text-balance text-muted-foreground">
-            Enter your email below to login to your account
+            Enter your email below
           </p>
         </div>
+
+        {error && (
+          <div className="p-3 text-sm text-red-600 bg-red-100 border border-red-400 rounded-md">
+            {error}
+          </div>
+        )}
+
         <Field>
           <FieldLabel htmlFor="email">Email</FieldLabel>
           <Input
@@ -30,6 +80,8 @@ export function LoginForm({
             placeholder="m@example.com"
             required
             className="bg-background"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </Field>
         <Field>
@@ -47,12 +99,16 @@ export function LoginForm({
             type="password"
             required
             className="bg-background"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </Field>
         <Field>
-          <Button type="submit">Login</Button>
+          <Button type="submit" disabled={isLoading}>
+            { isLoading ? <span className="animate-pulse">"Login you in..."</span> : "Login" }
+          </Button>
         </Field>
-        <FieldSeparator>Or continue with</FieldSeparator>
+        {/* <FieldSeparator>Or continue with</FieldSeparator>
         <Field>
           <Button variant="outline" type="button">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -69,7 +125,7 @@ export function LoginForm({
               Sign up
             </a>
           </FieldDescription>
-        </Field>
+        </Field> */}
       </FieldGroup>
     </form>
   )

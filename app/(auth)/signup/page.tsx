@@ -33,7 +33,7 @@ export default function SignupPage() {
                 throw new Error(data.error || 'Ocorreu um erro ao criar a conta.');
             }
 
-            // Sucesso! 
+            // Success 
             alert('Conta criada com sucesso! Redirecionando para o login...');
             
             // Manda o usuário para a tela de login
