@@ -1,0 +1,1852 @@
+{
+  "deck_name": "Pass JLPT N4 Kanji Deck",
+  "face": "",
+  "back": "",
+  "cards": [
+    {
+      "id": 1,
+      "kanji": "不",
+      "ja_on": "フ、ブ",
+      "ja_kun": "",
+      "meaning": "non-; negative; bad",
+      "examples": "不便 (ふべん) inconvenience",
+      "note": ""
+    },
+    {
+      "id": 2,
+      "kanji": "不",
+      "ja_on": "フ、ブ",
+      "ja_kun": "",
+      "meaning": "non-; negative; bad",
+      "examples": "不便 (ふべん) inconvenience",
+      "note": ""
+    },
+    {
+      "id": 3,
+      "kanji": "世",
+      "ja_on": "セ、セイ、ソウ",
+      "ja_kun": "よ",
+      "meaning": "generation; public; society; world",
+      "examples": "世界 (せかい) world 世話 (せわ) looking after",
+      "note": ""
+    },
+    {
+      "id": 4,
+      "kanji": "主",
+      "ja_on": "シュ、シュウ、ス",
+      "ja_kun": "おも、ぬし",
+      "meaning": "chief; lord; main thing; master; principal",
+      "examples": "ご主人 (ごしゅじん) (hon) your husband",
+      "note": ""
+    },
+    {
+      "id": 5,
+      "kanji": "乗",
+      "ja_on": "ショウ、ジョウ",
+      "ja_kun": "の・せる、の・る",
+      "meaning": "board; ride; counter for vehicles; multiplication; power",
+      "examples": "乗り換える (のりかえる) to transfer/change (bus, train) 乗り物 (のりもの) vehicle 乗る (のる) to get on (train, plane, bus, ship, etc.); to ride; to board",
+      "note": ""
+    },
+    {
+      "id": 6,
+      "kanji": "事",
+      "ja_on": "ジ",
+      "ja_kun": "こと",
+      "meaning": "business; fact; matter; possibly; reason; thing",
+      "examples": "事務所 (じむしょ) office 事故 (じこ) accident; incident; trouble 仕事 (しごと) work; job; business 返事 (へんじ) reply; response",
+      "note": ""
+    },
+    {
+      "id": 7,
+      "kanji": "京",
+      "ja_on": "キョウ",
+      "ja_kun": "みやこ",
+      "meaning": "capital",
+      "examples": "京都 (きょうと) Kyoto",
+      "note": ""
+    },
+    {
+      "id": 8,
+      "kanji": "仕",
+      "ja_on": "シ、ジ",
+      "ja_kun": "つか・える",
+      "meaning": "attend; doing; official; serve",
+      "examples": "仕事 (しごと) work; job; business 仕方 (しかた) way; method; means",
+      "note": ""
+    },
+    {
+      "id": 9,
+      "kanji": "代",
+      "ja_on": "タイ、ダイ",
+      "ja_kun": "かわ・る、か・える",
+      "meaning": "change; replace; substitute; convert; counter for decades of ages; fee; generation; period",
+      "examples": "代わり (かわり) substitute; replacement 時代 (じだい) period; era; times",
+      "note": ""
+    },
+    {
+      "id": 10,
+      "kanji": "以",
+      "ja_on": "イ",
+      "ja_kun": "",
+      "meaning": "because; by means of; compared with",
+      "examples": "以上 (いじょう) more than (or equal to); at least 以下 (いか) less than (or equal to); below 以内 (いない) within; up to; less than 以外 (いがい) with the exception of; other than",
+      "note": ""
+    },
+    {
+      "id": 11,
+      "kanji": "会",
+      "ja_on": "エ、カイ",
+      "ja_kun": "あ・う、あ・わせる、あつ・まる",
+      "meaning": "association; interview; join; meet; meeting; party",
+      "examples": "会う (あう) to meet 会場 (かいじょう) assembly hall; venue 会社 (かいしゃ) company 会議 (かいぎ) meeting; conference",
+      "note": ""
+    },
+    {
+      "id": 12,
+      "kanji": "低",
+      "ja_on": "テイ",
+      "ja_kun": "ひく・い、ひく・まる、ひく・める",
+      "meaning": "humble; lower; short",
+      "examples": "低い (ひくい) low (rank, volumn, etc.) | short (height); low (position)",
+      "note": ""
+    },
+    {
+      "id": 13,
+      "kanji": "住",
+      "ja_on": "ジュウ、チュウ、ヂュウ",
+      "ja_kun": "す・まう、す・む",
+      "meaning": "live; reside",
+      "examples": "住む (すむ) to live; to reside; to inhabit 住所 (じゅうしょ) address (e.g. of house)",
+      "note": ""
+    },
+    {
+      "id": 14,
+      "kanji": "体",
+      "ja_on": "タイ、テイ",
+      "ja_kun": "かたち、からだ",
+      "meaning": "body; object; substance",
+      "examples": "体 (からだ) body 大体 (だいたい) generally; approximately",
+      "note": ""
+    },
+    {
+      "id": 15,
+      "kanji": "作",
+      "ja_on": "サ、サク",
+      "ja_kun": "つく・り、つく・る",
+      "meaning": "build; make; prepare; production",
+      "examples": "作る (つくる) to make; to produce; to manufacture 作文 (さくぶん) writing; composition",
+      "note": ""
+    },
+    {
+      "id": 16,
+      "kanji": "使",
+      "ja_on": "シ",
+      "ja_kun": "つか・い、つか・う",
+      "meaning": "ambassador; use",
+      "examples": "使う (つかう) to use 大使館 (たいしかん) embassy",
+      "note": ""
+    },
+    {
+      "id": 17,
+      "kanji": "便",
+      "ja_on": "ビン、ベン",
+      "ja_kun": "たよ・り",
+      "meaning": "convenience; facility; feces; letter",
+      "examples": "不便 (ふべん) inconvenience 便利 (べんり) convenient; handy; useful 郵便局 (ゆうびんきょく) post office",
+      "note": ""
+    },
+    {
+      "id": 18,
+      "kanji": "借",
+      "ja_on": "シャク",
+      "ja_kun": "か・りる",
+      "meaning": "borrow; rent",
+      "examples": "借りる (かりる) to borrow; to have a loan | to rent",
+      "note": ""
+    },
+    {
+      "id": 19,
+      "kanji": "働",
+      "ja_on": "ドウ",
+      "ja_kun": "はたら・く",
+      "meaning": "work",
+      "examples": "働く (はたらく) to work; to labor",
+      "note": ""
+    },
+    {
+      "id": 20,
+      "kanji": "元",
+      "ja_on": "ガン、ゲン",
+      "ja_kun": "もと",
+      "meaning": "beginning; origin; former time",
+      "examples": "元気 (げんき) healthy; well; lively",
+      "note": ""
+    },
+    {
+      "id": 21,
+      "kanji": "兄",
+      "ja_on": "キョウ",
+      "ja_kun": "あに",
+      "meaning": "elder brother",
+      "examples": "お兄さん (おにいさん) older brother 兄 (あに) (hum) older brother 兄弟 (きょうだい) siblings; brothers and sisters",
+      "note": ""
+    },
+    {
+      "id": 22,
+      "kanji": "光",
+      "ja_on": "コウ",
+      "ja_kun": "ひか・る",
+      "meaning": "light; ray",
+      "examples": "光 (ひかり) light; illumination 光る (ひかる) to shine; to glitter",
+      "note": ""
+    },
+    {
+      "id": 23,
+      "kanji": "公",
+      "ja_on": "ク、コウ",
+      "ja_kun": "おおやけ",
+      "meaning": "governmental; public",
+      "examples": "公務員 (こうむいん) government worker 公園 (こうえん) park",
+      "note": ""
+    },
+    {
+      "id": 24,
+      "kanji": "写",
+      "ja_on": "シャ、ジャ",
+      "ja_kun": "うつ・す、うつ・る",
+      "meaning": "copy",
+      "examples": "写す (うつす) to copy; to transcribe; to photograph 写真 (しゃしん) photograph; photo; picture",
+      "note": ""
+    },
+    {
+      "id": 25,
+      "kanji": "冬",
+      "ja_on": "トウ",
+      "ja_kun": "ふゆ",
+      "meaning": "winter",
+      "examples": "冬 (ふゆ) winter",
+      "note": ""
+    },
+    {
+      "id": 26,
+      "kanji": "切",
+      "ja_on": "サイ、セツ",
+      "ja_kun": "き・る、き・れる",
+      "meaning": "be sharp; cut",
+      "examples": "切る (きる) to cut | to turn off (e.g. the light) 切手 (きって) stamp (postage) 切符 (きっぷ) ticket 大切 (たいせつ) important; necessary 親切 (しんせつ) kindness; gentleness",
+      "note": ""
+    },
+    {
+      "id": 27,
+      "kanji": "別",
+      "ja_on": "ベツ",
+      "ja_kun": "わか・れる、わ・ける",
+      "meaning": "branch off; fork; separate",
+      "examples": "別 (べつ) different; another; separate 別れる (わかれる) to part from; to break up 特別 (とくべつ) special",
+      "note": ""
+    },
+    {
+      "id": 28,
+      "kanji": "力",
+      "ja_on": "リイ、リキ、リョク",
+      "ja_kun": "ちから",
+      "meaning": "power; strength",
+      "examples": "力 (ちから) strength; power; skill",
+      "note": ""
+    },
+    {
+      "id": 29,
+      "kanji": "勉",
+      "ja_on": "ベン",
+      "ja_kun": "つと・める",
+      "meaning": "diligent; make effort; strive",
+      "examples": "勉強 (べんきょう) study",
+      "note": ""
+    },
+    {
+      "id": 30,
+      "kanji": "動",
+      "ja_on": "ドウ",
+      "ja_kun": "うご・かす、うご・く",
+      "meaning": "change; confusion; motion; move; shake; shift",
+      "examples": "動く (うごく) to move 動物 (どうぶつ) animal 動物園 (どうぶつえん) zoo 自動車 (じどうしゃ) automobile 運動 (うんどう) exercise; physical training",
+      "note": ""
+    },
+    {
+      "id": 31,
+      "kanji": "区",
+      "ja_on": "ク、コウ",
+      "ja_kun": "",
+      "meaning": "district; ward",
+      "examples": "～区 (～く) ～ district 渋谷区 (しぶやく) (district of) Shibuya",
+      "note": ""
+    },
+    {
+      "id": 32,
+      "kanji": "医",
+      "ja_on": "イ",
+      "ja_kun": "い・する、い・やす",
+      "meaning": "doctor; medicine",
+      "examples": "医学 (いがく) medical science; medicine 医者 (いしゃ) doctor 歯医者 (はいしゃ) dentist",
+      "note": ""
+    },
+    {
+      "id": 33,
+      "kanji": "去",
+      "ja_on": "キョ、コ",
+      "ja_kun": "さ・る",
+      "meaning": "eliminate; leave; past; quit",
+      "examples": "去年 (きょねん) last year",
+      "note": ""
+    },
+    {
+      "id": 34,
+      "kanji": "口",
+      "ja_on": "ク、コウ",
+      "ja_kun": "くち",
+      "meaning": "mouth",
+      "examples": "人口 (じんこう) population 入口 (いりぐち) entrance; entry 出口 (でぐち) exit 口 (くち) mouth | opening; hole",
+      "note": ""
+    },
+    {
+      "id": 35,
+      "kanji": "古",
+      "ja_on": "コ",
+      "ja_kun": "ふる・い",
+      "meaning": "old",
+      "examples": "古い (ふるい) old (not person); aged; stale",
+      "note": ""
+    },
+    {
+      "id": 36,
+      "kanji": "台",
+      "ja_on": "タイ、ダイ",
+      "ja_kun": "つかさ",
+      "meaning": "a stand; counter for machines and vehicles",
+      "examples": "台所 (だいどころ) kitchen 台風 (たいふう) typhoon; hurricane ～台 (～だい) counter for large objects (esp. devices such as refrigerators, cars)",
+      "note": ""
+    },
+    {
+      "id": 37,
+      "kanji": "合",
+      "ja_on": "カッ、ガッ、ゴウ",
+      "ja_kun": "あ・う、あ・わせる",
+      "meaning": "fit; join",
+      "examples": "場合 (ばあい) case; situation 試合 (しあい) match; game 都合 (つごう) circumstances; condition | arrangement 間に合う (まにあう) to be in time for",
+      "note": ""
+    },
+    {
+      "id": 38,
+      "kanji": "同",
+      "ja_on": "ドウ",
+      "ja_kun": "おな・じ",
+      "meaning": "agree; equal; same",
+      "examples": "同じ (おなじ) same; identical; equivalent",
+      "note": ""
+    },
+    {
+      "id": 39,
+      "kanji": "味",
+      "ja_on": "ミ",
+      "ja_kun": "あじ、あじ・わう",
+      "meaning": "flavor; taste",
+      "examples": "味 (あじ) flavor 味噌 (みそ) (food) miso 意味 (いみ) meaning 興味 (きょうみ) interest (in something); curiosity 趣味 (しゅみ) hobby",
+      "note": ""
+    },
+    {
+      "id": 40,
+      "kanji": "品",
+      "ja_on": "ヒン",
+      "ja_kun": "しな",
+      "meaning": "goods; refinement",
+      "examples": "品物 (しなもの) goods; article 食料品 (しょくりょうひん) foodstuff; groceries",
+      "note": ""
+    },
+    {
+      "id": 41,
+      "kanji": "員",
+      "ja_on": "イン",
+      "ja_kun": "",
+      "meaning": "employee; member",
+      "examples": "会社員 (かいしゃいん) company employee 公務員 (こうむいん) government worker 店員 (てんいん) clerk; salesperson ～員 (～いん) member of ～",
+      "note": ""
+    },
+    {
+      "id": 42,
+      "kanji": "問",
+      "ja_on": "モン",
+      "ja_kun": "と・う",
+      "meaning": "ask; problem; question",
+      "examples": "問題 (もんだい) question (e.g. on a test); problem 質問 (しつもん) question; inquiry",
+      "note": ""
+    },
+    {
+      "id": 43,
+      "kanji": "回",
+      "ja_on": "カイ",
+      "ja_kun": "まわ・す、まわ・る",
+      "meaning": "～ times; revolve",
+      "examples": "回る (まわる) to turn; to revolve; to go around ～回 (～かい) counter for number of times",
+      "note": ""
+    },
+    {
+      "id": 44,
+      "kanji": "図",
+      "ja_on": "ズ、ト",
+      "ja_kun": "はか・る",
+      "meaning": "map; plan",
+      "examples": "図書館 (としょかん) library 地図 (ちず) map",
+      "note": ""
+    },
+    {
+      "id": 45,
+      "kanji": "地",
+      "ja_on": "ジ、チ",
+      "ja_kun": "",
+      "meaning": "earth; ground",
+      "examples": "地下鉄 (ちかてつ) subway 地図 (ちず) map 地理 (ちり) geography 地震 (じしん) earthquake",
+      "note": ""
+    },
+    {
+      "id": 46,
+      "kanji": "堂",
+      "ja_on": "ドウ",
+      "ja_kun": "",
+      "meaning": "hall",
+      "examples": "講堂 (こうどう) auditorium; lecture hall 食堂 (しょくどう) cafeteria",
+      "note": ""
+    },
+    {
+      "id": 47,
+      "kanji": "場",
+      "ja_on": "ジョウ",
+      "ja_kun": "ば",
+      "meaning": "location; place",
+      "examples": "会場 (かいじょう) assembly hall; venue 場合 (ばあい) case; situation 場所 (ばしょ) place; location 工場 (こうじょう、こうば) factory; plant; mill; workshop 駐車場 (ちゅうしゃじょう) parking lot",
+      "note": ""
+    },
+    {
+      "id": 48,
+      "kanji": "声",
+      "ja_on": "ショウ、セイ",
+      "ja_kun": "こえ",
+      "meaning": "voice",
+      "examples": "声 (こえ) voice",
+      "note": ""
+    },
+    {
+      "id": 49,
+      "kanji": "売",
+      "ja_on": "バイ",
+      "ja_kun": "う・る、う・れる",
+      "meaning": "sell",
+      "examples": "売り場 (うりば) place where things are sold (sales counter, corner, etc.) 売る (うる) to sell",
+      "note": ""
+    },
+    {
+      "id": 50,
+      "kanji": "夏",
+      "ja_on": "カ、ガ",
+      "ja_kun": "なつ",
+      "meaning": "summer",
+      "examples": "夏 (なつ) summer 夏休み (なつやすみ) summer vacation",
+      "note": ""
+    },
+    {
+      "id": 51,
+      "kanji": "夕",
+      "ja_on": "",
+      "ja_kun": "ゆう",
+      "meaning": "evening",
+      "examples": "夕方 (ゆうがた) evening; dusk 夕飯 (ゆうめし、ゆうはん) evening meal",
+      "note": ""
+    },
+    {
+      "id": 52,
+      "kanji": "多",
+      "ja_on": "タ",
+      "ja_kun": "おお・い",
+      "meaning": "frequent; many",
+      "examples": "多い (おおい) many; a lot | large quantity 多分 (たぶん) perhaps; probably",
+      "note": ""
+    },
+    {
+      "id": 53,
+      "kanji": "夜",
+      "ja_on": "ヤ",
+      "ja_kun": "よ、よる",
+      "meaning": "evening",
+      "examples": "今夜 (こんや) this evening; tonight 夜 (よる) evening; night 昨夜 (ゆうべ) last night",
+      "note": ""
+    },
+    {
+      "id": 54,
+      "kanji": "太",
+      "ja_on": "タ、タイ",
+      "ja_kun": "ふと・い、ふと・る",
+      "meaning": "plump; thick",
+      "examples": "太い (ふとい) fat; thick | deep (of a voice) 太る (ふとる) to become fat",
+      "note": ""
+    },
+    {
+      "id": 55,
+      "kanji": "好",
+      "ja_on": "コウ",
+      "ja_kun": "この・む、す・く",
+      "meaning": "fond; pleasing",
+      "examples": "大好き (だいすき) loveable; like very much 好き (すき) like; likable",
+      "note": ""
+    },
+    {
+      "id": 56,
+      "kanji": "妹",
+      "ja_on": "マイ",
+      "ja_kun": "いもうと",
+      "meaning": "younger sister",
+      "examples": "妹 (いもうと) (hum) younger sister",
+      "note": ""
+    },
+    {
+      "id": 57,
+      "kanji": "姉",
+      "ja_on": "シ",
+      "ja_kun": "あね",
+      "meaning": "elder sister",
+      "examples": "お姉さん (おねえさん) elder sister 姉 (あね) (hum) older sister",
+      "note": ""
+    },
+    {
+      "id": 58,
+      "kanji": "始",
+      "ja_on": "シ",
+      "ja_kun": "はじ・まる、はじ・める",
+      "meaning": "begin",
+      "examples": "始まる (はじまる) to begin; to start 始める (はじめる) to start; to begin",
+      "note": ""
+    },
+    {
+      "id": 59,
+      "kanji": "字",
+      "ja_on": "ジ",
+      "ja_kun": "あざ",
+      "meaning": "character; letter",
+      "examples": "字 (じ) character; letter | hand-writing 字引き (じびき) dictionary 漢字 (かんじ) Chinese characters; kanji",
+      "note": ""
+    },
+    {
+      "id": 60,
+      "kanji": "安",
+      "ja_on": "アン",
+      "ja_kun": "やす・い、やす・まる",
+      "meaning": "cheap; peaceful; relaxed",
+      "examples": "安い (やすい) cheap; inexpensive 安全 (あんぜん) safety; security 安心 (あんしん) relief; peace of mind",
+      "note": ""
+    },
+    {
+      "id": 61,
+      "kanji": "室",
+      "ja_on": "シツ",
+      "ja_kun": "",
+      "meaning": "chamber; room",
+      "examples": "会議室 (かいぎしつ) conference room 教室 (きょうしつ) classroom 研究室 (けんきゅうしつ) laboratory",
+      "note": ""
+    },
+    {
+      "id": 62,
+      "kanji": "家",
+      "ja_on": "カ、ケ",
+      "ja_kun": "いえ、うち、や",
+      "meaning": "family; home; expert; professional",
+      "examples": "家 (いえ、うち) house; residence; dwelling 家内 (かない) (hum) wife | one's family 家庭 (かてい) household; family 家族 (かぞく) family; members of a family",
+      "note": ""
+    },
+    {
+      "id": 63,
+      "kanji": "寒",
+      "ja_on": "カン",
+      "ja_kun": "さむ・い",
+      "meaning": "cold",
+      "examples": "寒い (さむい) cold (e.g. weather)",
+      "note": ""
+    },
+    {
+      "id": 64,
+      "kanji": "少",
+      "ja_on": "ショウ",
+      "ja_kun": "すく・ない、すこ・し",
+      "meaning": "few",
+      "examples": "少し (すこし) small quantity; little; few 少ない (すくない) few; a little",
+      "note": ""
+    },
+    {
+      "id": 65,
+      "kanji": "屋",
+      "ja_on": "オク",
+      "ja_kun": "や",
+      "meaning": "house; roof; shop",
+      "examples": "八百屋 (やおや) greengrocer 屋上 (おくじょう) rooftop 部屋 (へや) room",
+      "note": ""
+    },
+    {
+      "id": 66,
+      "kanji": "工",
+      "ja_on": "ク、コウ",
+      "ja_kun": "",
+      "meaning": "construction; craft; katakana e radical (no. 48)",
+      "examples": "工場 (こうじょう、こうば) factory; plant; mill; workshop 工業 (こうぎょう) industry; industrial",
+      "note": ""
+    },
+    {
+      "id": 67,
+      "kanji": "市",
+      "ja_on": "シ",
+      "ja_kun": "いち",
+      "meaning": "city; market",
+      "examples": "市 (し) city 市民 (しみん) city resident; townspeople",
+      "note": ""
+    },
+    {
+      "id": 68,
+      "kanji": "帰",
+      "ja_on": "キ",
+      "ja_kun": "かえ・る",
+      "meaning": "come home",
+      "examples": "帰り (かえり) return; coming back 帰る (かえる) to return; to come home",
+      "note": ""
+    },
+    {
+      "id": 69,
+      "kanji": "広",
+      "ja_on": "コウ",
+      "ja_kun": "ひろ・い、ひろ・がる、ひろ・げる、ひろ・まる、ひろ・める",
+      "meaning": "wide",
+      "examples": "広い (ひろい) spacious; wide",
+      "note": ""
+    },
+    {
+      "id": 70,
+      "kanji": "店",
+      "ja_on": "テン",
+      "ja_kun": "みせ",
+      "meaning": "shop; store",
+      "examples": "喫茶店 (きっさてん) coffee shop; cafe 店 (みせ) store; shop 店員 (てんいん) clerk; salesperson",
+      "note": ""
+    },
+    {
+      "id": 71,
+      "kanji": "度",
+      "ja_on": "タク、ド",
+      "ja_kun": "たび",
+      "meaning": "degrees; occurrence; time",
+      "examples": "もう一度 (もういちど) once more; again 一度 (いちど) once 今度 (こんど) next time; another time 支度 (したく) preparation; arrangements ～度 (～ど) counter for number of times",
+      "note": ""
+    },
+    {
+      "id": 72,
+      "kanji": "建",
+      "ja_on": "ケン",
+      "ja_kun": "た・つ、た・てる",
+      "meaning": "build",
+      "examples": "建てる (たてる) to build; to construct 建物 (たてもの) building ～階建て (～かいだて) ～-storied building",
+      "note": ""
+    },
+    {
+      "id": 73,
+      "kanji": "引",
+      "ja_on": "イン",
+      "ja_kun": "ひ・く、ひ・ける",
+      "meaning": "pull",
+      "examples": "字引き (じびき) dictionary 引き出し (ひきだし) drawer 引き出す (ひきだす) to pull out; to bring out; to withdraw 引く (ひく) to pull 引っ越す (ひっこす) to move; to change residence",
+      "note": ""
+    },
+    {
+      "id": 74,
+      "kanji": "弟",
+      "ja_on": "ダイ",
+      "ja_kun": "おとうと",
+      "meaning": "younger brother",
+      "examples": "兄弟 (きょうだい) siblings; brothers and sisters 弟 (おとうと) (hum) younger brother",
+      "note": ""
+    },
+    {
+      "id": 75,
+      "kanji": "弱",
+      "ja_on": "ジャク",
+      "ja_kun": "よわ・い、よわ・まる、よわ・める",
+      "meaning": "frail; weak",
+      "examples": "弱い (よわい) weak; frail",
+      "note": ""
+    },
+    {
+      "id": 76,
+      "kanji": "強",
+      "ja_on": "キョウ、ゴウ",
+      "ja_kun": "つよ・い、つよ・まる、つよ・める",
+      "meaning": "strong",
+      "examples": "勉強 (べんきょう) study 強い (つよい) strong; powerful",
+      "note": ""
+    },
+    {
+      "id": 77,
+      "kanji": "待",
+      "ja_on": "タイ",
+      "ja_kun": "ま・つ",
+      "meaning": "depend on; wait",
+      "examples": "待つ (まつ) to wait 招待 (しょうたい) invitation",
+      "note": ""
+    },
+    {
+      "id": 78,
+      "kanji": "心",
+      "ja_on": "シン",
+      "ja_kun": "こころ",
+      "meaning": "heart; mind; spirit",
+      "examples": "心 (こころ) mind; heart; spirit 安心 (あんしん) relief; peace of mind 心配 (しんぱい) worry; concern 熱心 (ねっしん) zeal; enthusiasm",
+      "note": ""
+    },
+    {
+      "id": 79,
+      "kanji": "思",
+      "ja_on": "シ",
+      "ja_kun": "おも・う",
+      "meaning": "think",
+      "examples": "思い出す (おもいだす) to recall; to remember 思う (おもう) to think",
+      "note": ""
+    },
+    {
+      "id": 80,
+      "kanji": "急",
+      "ja_on": "キュウ",
+      "ja_kun": "いそ・ぎ、いそ・ぐ",
+      "meaning": "emergency; hurry",
+      "examples": "急ぐ (いそぐ) to hurry; to rush 急行 (きゅうこう) express (train) 特急 (とっきゅう) limited express (train, faster than an express)",
+      "note": ""
+    },
+    {
+      "id": 81,
+      "kanji": "悪",
+      "ja_on": "アク",
+      "ja_kun": "わる・い",
+      "meaning": "bad; evil",
+      "examples": "悪い (わるい) bad; poor; inferior | evil; sinful",
+      "note": ""
+    },
+    {
+      "id": 82,
+      "kanji": "意",
+      "ja_on": "イ",
+      "ja_kun": "",
+      "meaning": "care; desire; thought",
+      "examples": "意味 (いみ) meaning 意見 (いけん) opinion 注意 (ちゅうい) caution; attention; warning 用意 (ようい) preparation; arrangements",
+      "note": ""
+    },
+    {
+      "id": 83,
+      "kanji": "所",
+      "ja_on": "ショ",
+      "ja_kun": "ところ、どころ",
+      "meaning": "extent; place",
+      "examples": "事務所 (じむしょ) office 住所 (じゅうしょ) address (e.g. of house) 台所 (だいどころ) kitchen 場所 (ばしょ) place; location 近所 (きんじょ) neighborhood",
+      "note": ""
+    },
+    {
+      "id": 84,
+      "kanji": "手",
+      "ja_on": "シュ、ズ",
+      "ja_kun": "て",
+      "meaning": "hand",
+      "examples": "お手洗い (おてあらい) toilet; restroom 上手 (じょうず) skillful; proficient; good (at) 手 (て) hand; arm 手伝う (てつだう) to help; to assist 手紙 (てがみ) letter",
+      "note": ""
+    },
+    {
+      "id": 85,
+      "kanji": "持",
+      "ja_on": "ジ",
+      "ja_kun": "も・つ、も・てる",
+      "meaning": "have; hold",
+      "examples": "持つ (もつ) to hold | to possess; to have 気持ち (きもち) feeling; sensation; mood 金持ち (かねもち) rich person",
+      "note": ""
+    },
+    {
+      "id": 86,
+      "kanji": "教",
+      "ja_on": "キョウ",
+      "ja_kun": "おし・える、おそ・わる",
+      "meaning": "doctrine; faith; teach",
+      "examples": "教える (おしえる) to teach; to instruct 教会 (きょうかい) church 教室 (きょうしつ) classroom 教育 (きょういく) education; schooling; training",
+      "note": ""
+    },
+    {
+      "id": 87,
+      "kanji": "文",
+      "ja_on": "ブン、モン",
+      "ja_kun": "あや、ふみ",
+      "meaning": "art; decoration; literature",
+      "examples": "作文 (さくぶん) writing; composition 文化 (ぶんか) culture 文学 (ぶんがく) literature 文法 (ぶんぽう) grammar 文章 (ぶんしょう) writing; composition | sentence",
+      "note": ""
+    },
+    {
+      "id": 88,
+      "kanji": "料",
+      "ja_on": "リョウ",
+      "ja_kun": "",
+      "meaning": "fee; materials",
+      "examples": "料理 (りょうり) cooking; cuisine 食料品 (しょくりょうひん) foodstuff; groceries",
+      "note": ""
+    },
+    {
+      "id": 89,
+      "kanji": "新",
+      "ja_on": "シン",
+      "ja_kun": "あたら・しい、あら・た",
+      "meaning": "new",
+      "examples": "新しい (あたらしい) new 新聞 (しんぶん) newspaper 新聞社 (しんぶんしゃ) newspaper company",
+      "note": ""
+    },
+    {
+      "id": 90,
+      "kanji": "方",
+      "ja_on": "ホウ",
+      "ja_kun": "かた",
+      "meaning": "alternative; person",
+      "examples": "両方 (りょうほう) both; both sides 仕方 (しかた) way; method; means 夕方 (ゆうがた) evening; dusk 方 (かた) (hon) person",
+      "note": ""
+    },
+    {
+      "id": 91,
+      "kanji": "旅",
+      "ja_on": "リョ",
+      "ja_kun": "たび",
+      "meaning": "travel; trip",
+      "examples": "旅行 (りょこう) trip 旅館 (りょかん) Japanese-style lodging",
+      "note": ""
+    },
+    {
+      "id": 92,
+      "kanji": "族",
+      "ja_on": "ゾク",
+      "ja_kun": "",
+      "meaning": "family; tribe",
+      "examples": "家族 (かぞく) family; members of a family",
+      "note": ""
+    },
+    {
+      "id": 93,
+      "kanji": "早",
+      "ja_on": "サッ、ソウ",
+      "ja_kun": "はや・い、はや・まる、はや・める",
+      "meaning": "early; fast",
+      "examples": "早い (はやい) early; fast; quick",
+      "note": ""
+    },
+    {
+      "id": 94,
+      "kanji": "明",
+      "ja_on": "ミョウ、メイ",
+      "ja_kun": "あか・るい、あき・らか、あ・かり",
+      "meaning": "bright; light",
+      "examples": "明るい (あかるい) bright; colourful 明日 (あした) tomorrow 明日 (あした、あす) tomorrow 説明 (せつめい) explanation; exposition",
+      "note": ""
+    },
+    {
+      "id": 95,
+      "kanji": "映",
+      "ja_on": "エイ",
+      "ja_kun": "うつ・す、うつ・る、は・える",
+      "meaning": "projection; reflection",
+      "examples": "映画 (えいが) movie; film 映画館 (えいがかん) movie theatre",
+      "note": ""
+    },
+    {
+      "id": 96,
+      "kanji": "春",
+      "ja_on": "シュン",
+      "ja_kun": "はる",
+      "meaning": "springtime",
+      "examples": "春 (はる) spring",
+      "note": ""
+    },
+    {
+      "id": 97,
+      "kanji": "昼",
+      "ja_on": "チュウ",
+      "ja_kun": "ひる",
+      "meaning": "daytime; noon",
+      "examples": "昼 (ひる) noon 昼休み (ひるやすみ) lunch (noon) break; 昼御飯 (ひるごはん) lunch 昼間 (ひるま) daytime; during the day",
+      "note": ""
+    },
+    {
+      "id": 98,
+      "kanji": "暑",
+      "ja_on": "ショ",
+      "ja_kun": "あつ・い",
+      "meaning": "hot; sultry",
+      "examples": "暑い (あつい) hot (weather, etc.); warm",
+      "note": ""
+    },
+    {
+      "id": 99,
+      "kanji": "暗",
+      "ja_on": "アン",
+      "ja_kun": "くら・い、くら・む、くれ・る",
+      "meaning": "darkness; grow dark",
+      "examples": "暗い (くらい) dark; gloomy",
+      "note": ""
+    },
+    {
+      "id": 100,
+      "kanji": "曜",
+      "ja_on": "ヨウ",
+      "ja_kun": "",
+      "meaning": "weekday",
+      "examples": "土曜日 (どようび) Saturday 日曜日 (にちようび) Sunday 月曜日 (げつようび) Monday",
+      "note": ""
+    },
+    {
+      "id": 101,
+      "kanji": "有",
+      "ja_on": "ユウ",
+      "ja_kun": "あ・る",
+      "meaning": "exist; happen; possess",
+      "examples": "有名 (ゆうめい) famous",
+      "note": ""
+    },
+    {
+      "id": 102,
+      "kanji": "服",
+      "ja_on": "フク",
+      "ja_kun": "",
+      "meaning": "clothing",
+      "examples": "服 (ふく) clothes 洋服 (ようふく) Western-style clothes",
+      "note": ""
+    },
+    {
+      "id": 103,
+      "kanji": "朝",
+      "ja_on": "チョウ",
+      "ja_kun": "あさ",
+      "meaning": "morning; dynasty; period",
+      "examples": "今朝 (けさ) this morning 朝 (あさ) morning 朝御飯 (あさごはん) breakfast 毎朝 (まいあさ) every morning",
+      "note": ""
+    },
+    {
+      "id": 104,
+      "kanji": "村",
+      "ja_on": "ソン",
+      "ja_kun": "むら",
+      "meaning": "town; village",
+      "examples": "村 (むら) village",
+      "note": ""
+    },
+    {
+      "id": 105,
+      "kanji": "林",
+      "ja_on": "リン",
+      "ja_kun": "はやし",
+      "meaning": "forest; grove",
+      "examples": "林 (はやし) woods; thicket",
+      "note": ""
+    },
+    {
+      "id": 106,
+      "kanji": "森",
+      "ja_on": "シン",
+      "ja_kun": "もり",
+      "meaning": "forest; woods",
+      "examples": "森 (もり) forest",
+      "note": ""
+    },
+    {
+      "id": 107,
+      "kanji": "業",
+      "ja_on": "ギョウ、ゴウ",
+      "ja_kun": "わざ",
+      "meaning": "arts; vocation",
+      "examples": "卒業 (そつぎょう) graduation 工業 (こうぎょう) industry; industrial 授業 (じゅぎょう) lesson; class work 産業 (さんぎょう) industry",
+      "note": ""
+    },
+    {
+      "id": 108,
+      "kanji": "楽",
+      "ja_on": "ガク、ゴウ、ラク",
+      "ja_kun": "この・む、たの・しい、たの・しむ",
+      "meaning": "comfort; ease",
+      "examples": "楽しい (たのしい) enjoyable; fun 楽しみ (たのしみ) enjoyment; pleasure 楽しむ (たのしむ) to enjoy oneself; to have fun 音楽 (おんがく) music",
+      "note": ""
+    },
+    {
+      "id": 109,
+      "kanji": "歌",
+      "ja_on": "カ",
+      "ja_kun": "うた、うた・う",
+      "meaning": "sing; song",
+      "examples": "歌 (うた) song 歌う (うたう) to sing | to recite a poem",
+      "note": ""
+    },
+    {
+      "id": 110,
+      "kanji": "止",
+      "ja_on": "シ",
+      "ja_kun": "とど・まる、とど・める、と・まる、と・める、や・む、や・める",
+      "meaning": "halt; stop",
+      "examples": "止まる (とまる) to stop 止む (やむ) to cease; to stop 止める (とめる) to stop; to turn off; to park 止める (やめる) to stop (an activity); to quit",
+      "note": ""
+    },
+    {
+      "id": 111,
+      "kanji": "正",
+      "ja_on": "ショウ、セイ",
+      "ja_kun": "ただ・しい、まさ・に",
+      "meaning": "correct",
+      "examples": "正しい (ただしい) right; correct 正月 (しょうがつ) New Year (esp. the first few days); January",
+      "note": ""
+    },
+    {
+      "id": 112,
+      "kanji": "歩",
+      "ja_on": "フ、ブ、ホ",
+      "ja_kun": "あゆ・む、ある・く",
+      "meaning": "counter for steps; walk",
+      "examples": "散歩 (さんぽ) walk; stroll 歩く (あるく) to walk",
+      "note": ""
+    },
+    {
+      "id": 113,
+      "kanji": "死",
+      "ja_on": "シ",
+      "ja_kun": "し・ぬ",
+      "meaning": "death",
+      "examples": "死ぬ (しぬ) to die; to pass away",
+      "note": ""
+    },
+    {
+      "id": 114,
+      "kanji": "民",
+      "ja_on": "ミン",
+      "ja_kun": "たみ",
+      "meaning": "nation; people",
+      "examples": "市民 (しみん) city resident; townspeople",
+      "note": ""
+    },
+    {
+      "id": 115,
+      "kanji": "池",
+      "ja_on": "チ",
+      "ja_kun": "いけ",
+      "meaning": "pond; pool",
+      "examples": "池 (いけ) pond",
+      "note": ""
+    },
+    {
+      "id": 116,
+      "kanji": "注",
+      "ja_on": "チュウ",
+      "ja_kun": "さ・す、そそ・ぐ、つ・ぐ",
+      "meaning": "annotate; comment; concentrate on; flow into",
+      "examples": "注射 (ちゅうしゃ) injection; shot 注意 (ちゅうい) caution; attention; warning",
+      "note": ""
+    },
+    {
+      "id": 117,
+      "kanji": "洋",
+      "ja_on": "ヨウ",
+      "ja_kun": "",
+      "meaning": "ocean; sea; Western style; foreign",
+      "examples": "洋服 (ようふく) Western-style clothes 西洋 (せいよう) the west; Western countries",
+      "note": ""
+    },
+    {
+      "id": 118,
+      "kanji": "洗",
+      "ja_on": "セン",
+      "ja_kun": "あら・う",
+      "meaning": "inquire into; probe; wash",
+      "examples": "お手洗い (おてあらい) toilet; restroom 洗う (あらう) to wash; to cleanse 洗濯 (せんたく) washing; laundry",
+      "note": ""
+    },
+    {
+      "id": 119,
+      "kanji": "海",
+      "ja_on": "カイ",
+      "ja_kun": "うみ",
+      "meaning": "ocean",
+      "examples": "海 (うみ) sea; ocean 海岸 (かいがん) coast; beach",
+      "note": ""
+    },
+    {
+      "id": 120,
+      "kanji": "漢",
+      "ja_on": "カン",
+      "ja_kun": "",
+      "meaning": "China; Sino-",
+      "examples": "漢字 (かんじ) Chinese characters; kanji",
+      "note": ""
+    },
+    {
+      "id": 121,
+      "kanji": "牛",
+      "ja_on": "ギュウ",
+      "ja_kun": "うし",
+      "meaning": "cow",
+      "examples": "牛乳 (ぎゅうにゅう) (cow's) milk 牛肉 (ぎゅうにく) beef",
+      "note": ""
+    },
+    {
+      "id": 122,
+      "kanji": "物",
+      "ja_on": "ブツ、モツ",
+      "ja_kun": "もの",
+      "meaning": "matter; object; thing",
+      "examples": "動物 (どうぶつ) animal 動物園 (どうぶつえん) zoo 果物 (くだもの) fruit 荷物 (にもつ) luggage; package 見物 (けんぶつ) sightseeing; watching",
+      "note": ""
+    },
+    {
+      "id": 123,
+      "kanji": "特",
+      "ja_on": "トク",
+      "ja_kun": "",
+      "meaning": "special",
+      "examples": "特に (とくに) particularly; especially 特別 (とくべつ) special 特急 (とっきゅう) limited express (train, faster than an express)",
+      "note": ""
+    },
+    {
+      "id": 124,
+      "kanji": "犬",
+      "ja_on": "ケン",
+      "ja_kun": "いぬ",
+      "meaning": "dog",
+      "examples": "犬 (いぬ) dog",
+      "note": ""
+    },
+    {
+      "id": 125,
+      "kanji": "理",
+      "ja_on": "リ",
+      "ja_kun": "ことわり",
+      "meaning": "arrangement; justice; logic; reason",
+      "examples": "地理 (ちり) geography 料理 (りょうり) cooking; cuisine 無理 (むり) impossible 理由 (りゆう) reason; motive",
+      "note": ""
+    },
+    {
+      "id": 126,
+      "kanji": "産",
+      "ja_on": "サン",
+      "ja_kun": "う・まれる、う・む",
+      "meaning": "childbirth; native; products; property",
+      "examples": "お土産 (おみやげ) present; souvenir 生産 (せいさん) production; manufacture 産業 (さんぎょう) industry",
+      "note": ""
+    },
+    {
+      "id": 127,
+      "kanji": "用",
+      "ja_on": "ヨウ",
+      "ja_kun": "もち・いる",
+      "meaning": "business; employ; use",
+      "examples": "利用 (りよう) use; utilization 用 (よう) business; task | use; purpose 用事 (ようじ) things to do; errand; business (to take care of) 用意 (ようい) preparation; arrangements",
+      "note": ""
+    },
+    {
+      "id": 128,
+      "kanji": "田",
+      "ja_on": "デン",
+      "ja_kun": "た",
+      "meaning": "rice field; rice paddy",
+      "examples": "田舎 (いなか) rural area; countryside",
+      "note": ""
+    },
+    {
+      "id": 129,
+      "kanji": "町",
+      "ja_on": "チョウ",
+      "ja_kun": "まち",
+      "meaning": "block; street; town; village",
+      "examples": "町 (まち) town",
+      "note": ""
+    },
+    {
+      "id": 130,
+      "kanji": "画",
+      "ja_on": "エ、カク、ガ",
+      "ja_kun": "えが・く、はか・る",
+      "meaning": "brush-stroke; picture",
+      "examples": "映画 (えいが) movie; film 映画館 (えいがかん) movie theatre 漫画 (まんが) cartoon; comic 計画 (けいかく) plan; schedule",
+      "note": ""
+    },
+    {
+      "id": 131,
+      "kanji": "界",
+      "ja_on": "カイ",
+      "ja_kun": "",
+      "meaning": "boundary; world",
+      "examples": "世界 (せかい) world",
+      "note": ""
+    },
+    {
+      "id": 132,
+      "kanji": "病",
+      "ja_on": "ビョウ",
+      "ja_kun": "やまい、や・む",
+      "meaning": "ill; sick",
+      "examples": "病気 (びょうき) illness; disease 病院 (びょういん) hospital",
+      "note": ""
+    },
+    {
+      "id": 133,
+      "kanji": "発",
+      "ja_on": "ハツ、ホツ",
+      "ja_kun": "た・つ、つか・わす、はな・つ",
+      "meaning": "departure; disclose; emit; publish; start from",
+      "examples": "出発 (しゅっぱつ) departure 発音 (はつおん) pronunciation",
+      "note": ""
+    },
+    {
+      "id": 134,
+      "kanji": "目",
+      "ja_on": "ボク、モク",
+      "ja_kun": "め",
+      "meaning": "eye; insight; experience; favor",
+      "examples": "目 (め) eye; eyeball 真面目 (まじめ) diligent; serious; honest ～目 (～め) number in a sequence",
+      "note": ""
+    },
+    {
+      "id": 135,
+      "kanji": "県",
+      "ja_on": "ケン",
+      "ja_kun": "",
+      "meaning": "prefecture",
+      "examples": "千葉県 (ちばけん) Chiba Prefeture",
+      "note": ""
+    },
+    {
+      "id": 136,
+      "kanji": "真",
+      "ja_on": "シン",
+      "ja_kun": "ま、まこと",
+      "meaning": "Buddhist sect; reality; true",
+      "examples": "写真 (しゃしん) photograph; photo; picture 真中 (まんなか) middle; center 真面目 (まじめ) diligent; serious; honest",
+      "note": ""
+    },
+    {
+      "id": 137,
+      "kanji": "着",
+      "ja_on": "ジャク、チャク",
+      "ja_kun": "き・せる、き・る、つ・く、つ・ける",
+      "meaning": "arrive; don; wear",
+      "examples": "上着 (うわぎ) coat; tunic; jacket; outer garment 下着 (したぎ) underwear 着く (つく) to arrive at; to reach 着る (きる) to wear; to put on 着物 (きもの) kimono (or other trad. Japanese clothing)",
+      "note": ""
+    },
+    {
+      "id": 138,
+      "kanji": "知",
+      "ja_on": "チ",
+      "ja_kun": "し・らせる、し・る",
+      "meaning": "know; wisdom",
+      "examples": "承知 (しょうち) consent; acceptance 知らせる (しらせる) to notify; to inform 知る (しる) to know",
+      "note": ""
+    },
+    {
+      "id": 139,
+      "kanji": "短",
+      "ja_on": "タン",
+      "ja_kun": "みじか・い",
+      "meaning": "brevity; short; defect; fault",
+      "examples": "短い (みじかい) short",
+      "note": ""
+    },
+    {
+      "id": 140,
+      "kanji": "研",
+      "ja_on": "ケン",
+      "ja_kun": "と・ぐ",
+      "meaning": "polish; sharpen",
+      "examples": "研究 (けんきゅう) study; research 研究室 (けんきゅうしつ) laboratory",
+      "note": ""
+    },
+    {
+      "id": 141,
+      "kanji": "社",
+      "ja_on": "シャ",
+      "ja_kun": "やしろ",
+      "meaning": "association; company; shrine",
+      "examples": "会社 (かいしゃ) company 社会 (しゃかい) society 社長 (しゃちょう) company president 神社 (じんじゃ) Shinto shrine",
+      "note": ""
+    },
+    {
+      "id": 142,
+      "kanji": "私",
+      "ja_on": "シ",
+      "ja_kun": "わたくし、わたし",
+      "meaning": "I; me; private",
+      "examples": "私 (わたし) I; me",
+      "note": ""
+    },
+    {
+      "id": 143,
+      "kanji": "秋",
+      "ja_on": "シュウ",
+      "ja_kun": "あき",
+      "meaning": "autumn",
+      "examples": "秋 (あき) autumn; fall",
+      "note": ""
+    },
+    {
+      "id": 144,
+      "kanji": "究",
+      "ja_on": "キュウ、ク",
+      "ja_kun": "きわ・める",
+      "meaning": "research; study",
+      "examples": "研究 (けんきゅう) study; research 研究室 (けんきゅうしつ) laboratory",
+      "note": ""
+    },
+    {
+      "id": 145,
+      "kanji": "空",
+      "ja_on": "クウ",
+      "ja_kun": "あ・く、あ・ける、から、す・く",
+      "meaning": "empty; vacuum; sky",
+      "examples": "空 (そら) sky 空く (あく) (あく) to be open; to become empty 空く (すく) (すく) to become less crowded; to get empty 空気 (くうき) air; atmosphere | mood; situation 空港 (くうこう) airport",
+      "note": ""
+    },
+    {
+      "id": 146,
+      "kanji": "立",
+      "ja_on": "リツ、リュウ",
+      "ja_kun": "た・つ、た・てる",
+      "meaning": "erect; rise; stand up",
+      "examples": "役に立つ (やくにたつ) to be useful 立つ (たつ) to stand; to rise 立てる (たてる) to stand up; to erect 立派 (りっぱ) splendid; fine",
+      "note": ""
+    },
+    {
+      "id": 147,
+      "kanji": "答",
+      "ja_on": "トウ",
+      "ja_kun": "こた・える",
+      "meaning": "answer; solution",
+      "examples": "答 (こたえ) answer; reply 答える (こたえる) to answer; to reply",
+      "note": ""
+    },
+    {
+      "id": 148,
+      "kanji": "紙",
+      "ja_on": "シ",
+      "ja_kun": "かみ",
+      "meaning": "paper",
+      "examples": "手紙 (てがみ) letter 紙 (かみ) paper",
+      "note": ""
+    },
+    {
+      "id": 149,
+      "kanji": "終",
+      "ja_on": "シュウ",
+      "ja_kun": "お・える、お・わる",
+      "meaning": "end; finish",
+      "examples": "終わり (おわり) the end 終わる (おわる) to end; to finish",
+      "note": ""
+    },
+    {
+      "id": 150,
+      "kanji": "習",
+      "ja_on": "シュウ",
+      "ja_kun": "なら・う",
+      "meaning": "learn",
+      "examples": "予習 (よしゅう) preparation for a lesson 復習 (ふくしゅう) review 練習 (れんしゅう) practice 習う (ならう) to learn 習慣 (しゅうかん) habit; custom",
+      "note": ""
+    },
+    {
+      "id": 151,
+      "kanji": "考",
+      "ja_on": "コウ",
+      "ja_kun": "かんが・える",
+      "meaning": "consider",
+      "examples": "考える (かんがえる) to think; to ponder",
+      "note": ""
+    },
+    {
+      "id": 152,
+      "kanji": "者",
+      "ja_on": "シャ",
+      "ja_kun": "もの",
+      "meaning": "person",
+      "examples": "医者 (いしゃ) doctor 歯医者 (はいしゃ) dentist",
+      "note": ""
+    },
+    {
+      "id": 153,
+      "kanji": "肉",
+      "ja_on": "ニク",
+      "ja_kun": "",
+      "meaning": "meat",
+      "examples": "牛肉 (ぎゅうにく) beef 肉 (にく) flesh | meat 豚肉 (ぶたにく) pork 鶏肉 (とりにく) chicken meat",
+      "note": ""
+    },
+    {
+      "id": 154,
+      "kanji": "自",
+      "ja_on": "シ、ジ",
+      "ja_kun": "みずか・ら",
+      "meaning": "oneself",
+      "examples": "自分 (じぶん) myself; oneself 自動車 (じどうしゃ) automobile 自由 (じゆう) freedom 自転車 (じてんしゃ) bicycle",
+      "note": ""
+    },
+    {
+      "id": 155,
+      "kanji": "色",
+      "ja_on": "シキ、ショク",
+      "ja_kun": "いろ",
+      "meaning": "color",
+      "examples": "景色 (けしき) scenery; scene; landscape 色 (いろ) color 色々 (いろいろ) various 茶色 (ちゃいろ) brown 黄色い (きいろい) yellow",
+      "note": ""
+    },
+    {
+      "id": 156,
+      "kanji": "花",
+      "ja_on": "カ",
+      "ja_kun": "はな",
+      "meaning": "flower",
+      "examples": "花 (はな) flower 花瓶 (かびん) (flower) vase 花見 (はなみ) cherry blossom viewing",
+      "note": ""
+    },
+    {
+      "id": 157,
+      "kanji": "英",
+      "ja_on": "エイ",
+      "ja_kun": "",
+      "meaning": "England; English",
+      "examples": "英語 (えいご) English",
+      "note": ""
+    },
+    {
+      "id": 158,
+      "kanji": "茶",
+      "ja_on": "サ、チャ",
+      "ja_kun": "",
+      "meaning": "tea",
+      "examples": "お茶 (おちゃ) tea (usu. Green) 喫茶店 (きっさてん) coffee shop; cafe 紅茶 (こうちゃ) black tea 茶色 (ちゃいろ) brown",
+      "note": ""
+    },
+    {
+      "id": 159,
+      "kanji": "菜",
+      "ja_on": "サイ",
+      "ja_kun": "な",
+      "meaning": "greens; vegetable",
+      "examples": "野菜 (やさい) vegetable",
+      "note": ""
+    },
+    {
+      "id": 160,
+      "kanji": "薬",
+      "ja_on": "ヤク",
+      "ja_kun": "くすり",
+      "meaning": "chemical; medicine",
+      "examples": "薬 (くすり) medicine; pharmaceuticals",
+      "note": ""
+    },
+    {
+      "id": 161,
+      "kanji": "親",
+      "ja_on": "シン",
+      "ja_kun": "おや、した・しい、した・しむ",
+      "meaning": "parent; relative; intimacy",
+      "examples": "両親 (りょうしん) both parents 親 (おや) parent(s) 親切 (しんせつ) kindness; gentleness",
+      "note": ""
+    },
+    {
+      "id": 162,
+      "kanji": "言",
+      "ja_on": "ゲン、ゴン",
+      "ja_kun": "い・う",
+      "meaning": "say; word",
+      "examples": "言う (いう) to say; to utter 言葉 (ことば) word; phrase",
+      "note": ""
+    },
+    {
+      "id": 163,
+      "kanji": "計",
+      "ja_on": "ケイ",
+      "ja_kun": "はか・る",
+      "meaning": "measure; plan",
+      "examples": "時計 (とけい) watch; clock 計画 (けいかく) plan; schedule",
+      "note": ""
+    },
+    {
+      "id": 164,
+      "kanji": "試",
+      "ja_on": "シ",
+      "ja_kun": "こころ・みる、ため・す",
+      "meaning": "test; try",
+      "examples": "試合 (しあい) match; game 試験 (しけん) exam; test",
+      "note": ""
+    },
+    {
+      "id": 165,
+      "kanji": "説",
+      "ja_on": "セツ、ゼイ",
+      "ja_kun": "と・く",
+      "meaning": "explanation; opinion",
+      "examples": "小説 (しょうせつ) novel; (short) story 説明 (せつめい) explanation; exposition",
+      "note": ""
+    },
+    {
+      "id": 166,
+      "kanji": "買",
+      "ja_on": "バイ",
+      "ja_kun": "か・う",
+      "meaning": "buy",
+      "examples": "買い物 (かいもの) shopping; purchased goods 買う (かう) to buy",
+      "note": ""
+    },
+    {
+      "id": 167,
+      "kanji": "貸",
+      "ja_on": "タイ",
+      "ja_kun": "か・す",
+      "meaning": "lend",
+      "examples": "貸す (かす) to lend",
+      "note": ""
+    },
+    {
+      "id": 168,
+      "kanji": "質",
+      "ja_on": "シチ、シツ、チ",
+      "ja_kun": "",
+      "meaning": "matter; quality",
+      "examples": "質問 (しつもん) question; inquiry",
+      "note": ""
+    },
+    {
+      "id": 169,
+      "kanji": "赤",
+      "ja_on": "シャク、セキ",
+      "ja_kun": "あか、あか・い、あか・らむ、あか・らめる",
+      "meaning": "red",
+      "examples": "赤 (あか) red; crimson; scarlet 赤い (あかい) red 赤ちゃん (あかちゃん) baby 赤ん坊 (あかんぼう) baby; infant",
+      "note": ""
+    },
+    {
+      "id": 170,
+      "kanji": "走",
+      "ja_on": "ソウ",
+      "ja_kun": "はし・る",
+      "meaning": "run",
+      "examples": "走る (はしる) to run",
+      "note": ""
+    },
+    {
+      "id": 171,
+      "kanji": "起",
+      "ja_on": "キ",
+      "ja_kun": "お・きる、お・こす、お・こる",
+      "meaning": "get up; wake up",
+      "examples": "起きる (おきる) to get up; to wake up 起こす (おこす) to wake up 起す (おこす) to wake up",
+      "note": ""
+    },
+    {
+      "id": 172,
+      "kanji": "足",
+      "ja_on": "ソク",
+      "ja_kun": "あし、た・す、た・りる、た・る",
+      "meaning": "leg; foot; be sufficient",
+      "examples": "足 (あし) foot | leg 足す (たす) to add 足りる (たりる) to be sufficient; to be enough",
+      "note": ""
+    },
+    {
+      "id": 173,
+      "kanji": "転",
+      "ja_on": "テン",
+      "ja_kun": "ころ・がす、ころ・がる、ころ・げる、ころ・ぶ",
+      "meaning": "revolve",
+      "examples": "自転車 (じてんしゃ) bicycle 運転 (うんてん) operation (of a machine, etc.); driving 運転手 (うんてんしゅ) driver; chauffeur",
+      "note": ""
+    },
+    {
+      "id": 174,
+      "kanji": "軽",
+      "ja_on": "ケイ",
+      "ja_kun": "かる・い、かろ・やか",
+      "meaning": "light; unimportant",
+      "examples": "軽い (かるい) light (i.e. not heavy)",
+      "note": ""
+    },
+    {
+      "id": 175,
+      "kanji": "近",
+      "ja_on": "キン、コン",
+      "ja_kun": "ちか・い",
+      "meaning": "akin; near",
+      "examples": "最近 (さいきん) recently 近い (ちかい) near; close 近く (ちかく) near 近所 (きんじょ) neighborhood",
+      "note": ""
+    },
+    {
+      "id": 176,
+      "kanji": "送",
+      "ja_on": "ソウ",
+      "ja_kun": "おく・る",
+      "meaning": "escort; send",
+      "examples": "放送 (ほうそう) broadcast 送る (おくる) to send; to dispatch | to escort",
+      "note": ""
+    },
+    {
+      "id": 177,
+      "kanji": "通",
+      "ja_on": "ツ、ツウ",
+      "ja_kun": "かよ・う、とお・す、とお・る",
+      "meaning": "avenue; commute; pass through",
+      "examples": "交通 (こうつう) traffic; transportation; communication 普通 (ふつう) usual; ordinary 通う (かよう) to go to (school, work, etc.); to commute 通り (とおり) street; road 通る (とおる) to pass by; to go through",
+      "note": ""
+    },
+    {
+      "id": 178,
+      "kanji": "週",
+      "ja_on": "シュウ",
+      "ja_kun": "",
+      "meaning": "week",
+      "examples": "今週 (こんしゅう) this week 来週 (らいしゅう) next week 毎週 (まいしゅう) every week ～週間 (～しゅうかん) period of weeks",
+      "note": ""
+    },
+    {
+      "id": 179,
+      "kanji": "進",
+      "ja_on": "シン",
+      "ja_kun": "すす・む、すす・める",
+      "meaning": "advance; proceed",
+      "examples": "進む (すすむ) to advance; to proceed",
+      "note": ""
+    },
+    {
+      "id": 180,
+      "kanji": "運",
+      "ja_on": "ウン",
+      "ja_kun": "はこ・ぶ",
+      "meaning": "carry; destiny; fate",
+      "examples": "運ぶ (はこぶ) to carry 運動 (うんどう) exercise; physical training 運転 (うんてん) operation (of a machine, etc.); driving 運転手 (うんてんしゅ) driver; chauffeur",
+      "note": ""
+    },
+    {
+      "id": 181,
+      "kanji": "道",
+      "ja_on": "トウ、ドウ",
+      "ja_kun": "みち",
+      "meaning": "road-way; street; teachings",
+      "examples": "柔道 (じゅうどう) judo 水道 (すいどう) water supply; water works 道 (みち) road; street 道具 (どうぐ) tool; apparatus; device",
+      "note": ""
+    },
+    {
+      "id": 182,
+      "kanji": "遠",
+      "ja_on": "エン、オン",
+      "ja_kun": "とお・い",
+      "meaning": "far",
+      "examples": "遠い (とおい) far; distant 遠く (とおく) far away; distant 遠慮 (えんりょ) holding back (out of politeness)",
+      "note": ""
+    },
+    {
+      "id": 183,
+      "kanji": "都",
+      "ja_on": "ツ、ト",
+      "ja_kun": "みやこ",
+      "meaning": "capital; metropolis",
+      "examples": "都 (と) metropolis; city 都合 (つごう) circumstances; condition | arrangement",
+      "note": ""
+    },
+    {
+      "id": 184,
+      "kanji": "重",
+      "ja_on": "ジュウ、チョウ",
+      "ja_kun": "おも・い、かさ・なる、かさ・ねる",
+      "meaning": "heavy; important; pile up",
+      "examples": "重い (おもい) heavy; weighty",
+      "note": ""
+    },
+    {
+      "id": 185,
+      "kanji": "野",
+      "ja_on": "ヤ",
+      "ja_kun": "の",
+      "meaning": "field; rustic",
+      "examples": "野菜 (やさい) vegetable",
+      "note": ""
+    },
+    {
+      "id": 186,
+      "kanji": "銀",
+      "ja_on": "ギン",
+      "ja_kun": "しろがね",
+      "meaning": "silver",
+      "examples": "銀行 (ぎんこう) bank",
+      "note": ""
+    },
+    {
+      "id": 187,
+      "kanji": "門",
+      "ja_on": "モン",
+      "ja_kun": "かど",
+      "meaning": "gate",
+      "examples": "専門 (せんもん) speciality; area of expertise 門 (もん) gate",
+      "note": ""
+    },
+    {
+      "id": 188,
+      "kanji": "開",
+      "ja_on": "カイ",
+      "ja_kun": "あ・く、あ・ける、ひら・く、ひら・ける",
+      "meaning": "open; unfold",
+      "examples": "開く (あく) to open (e.g. doors) 開く（ひらく） (ひらく) to open 開ける (あける) to open (a door, etc.); to unwrap; to unlock",
+      "note": ""
+    },
+    {
+      "id": 189,
+      "kanji": "院",
+      "ja_on": "イン",
+      "ja_kun": "",
+      "meaning": "institution",
+      "examples": "入院 (にゅういん) hospitalization 病院 (びょういん) hospital 退院 (たいいん) discharge from hospital",
+      "note": ""
+    },
+    {
+      "id": 190,
+      "kanji": "集",
+      "ja_on": "シュウ",
+      "ja_kun": "あつ・まる、あつ・める",
+      "meaning": "flock; gather",
+      "examples": "集まる (あつまる) to gather 集める (あつめる) to collect; to assemble; to gather",
+      "note": ""
+    },
+    {
+      "id": 191,
+      "kanji": "青",
+      "ja_on": "ショウ、セイ",
+      "ja_kun": "あお、あお・い",
+      "meaning": "blue; green",
+      "examples": "青 (あお) blue; green 青い (あおい) blue; green",
+      "note": ""
+    },
+    {
+      "id": 192,
+      "kanji": "音",
+      "ja_on": "イン、オン",
+      "ja_kun": "おと、ね",
+      "meaning": "noise; sound",
+      "examples": "発音 (はつおん) pronunciation 音 (おと) sound; noise 音楽 (おんがく) music",
+      "note": ""
+    },
+    {
+      "id": 193,
+      "kanji": "頭",
+      "ja_on": "ズ、ト、トウ",
+      "ja_kun": "あたま、かしら",
+      "meaning": "head",
+      "examples": "頭 (あたま) head",
+      "note": ""
+    },
+    {
+      "id": 194,
+      "kanji": "題",
+      "ja_on": "ダイ",
+      "ja_kun": "",
+      "meaning": "subject; topic",
+      "examples": "問題 (もんだい) question (e.g. on a test); problem 宿題 (しゅくだい) homework; assignment",
+      "note": ""
+    },
+    {
+      "id": 195,
+      "kanji": "顔",
+      "ja_on": "ガン",
+      "ja_kun": "かお",
+      "meaning": "expression; face",
+      "examples": "顔 (かお) face | look; expression",
+      "note": ""
+    },
+    {
+      "id": 196,
+      "kanji": "風",
+      "ja_on": "フ、フウ",
+      "ja_kun": "かぜ",
+      "meaning": "air; manner; style; wind",
+      "examples": "台風 (たいふう) typhoon; hurricane 風 (かぜ) wind; breeze 風呂 (ふろ) bath; bathhouse 風邪 (かぜ) common cold",
+      "note": ""
+    },
+    {
+      "id": 197,
+      "kanji": "飯",
+      "ja_on": "ハン",
+      "ja_kun": "めし",
+      "meaning": "boiled rice; meal",
+      "examples": "夕飯 (ゆうめし、ゆうはん) evening meal 御飯 (ごはん) cooked rice | meal 晩御飯 (ばんごはん) dinner",
+      "note": ""
+    },
+    {
+      "id": 198,
+      "kanji": "飲",
+      "ja_on": "イン",
+      "ja_kun": "の・む",
+      "meaning": "drink",
+      "examples": "飲み物 (のみもの) drink; beverage 飲む (のむ) to drink; to swallow; to take (medicine)",
+      "note": ""
+    },
+    {
+      "id": 199,
+      "kanji": "館",
+      "ja_on": "カン",
+      "ja_kun": "やかた",
+      "meaning": "(large) building",
+      "examples": "図書館 (としょかん) library 大使館 (たいしかん) embassy 旅館 (りょかん) Japanese-style lodging 映画館 (えいがかん) movie theatre 美術館 (びじゅつかん) art museum",
+      "note": ""
+    },
+    {
+      "id": 200,
+      "kanji": "首",
+      "ja_on": "シュ",
+      "ja_kun": "くび",
+      "meaning": "neck",
+      "examples": "首 (くび) neck",
+      "note": ""
+    },
+    {
+      "id": 201,
+      "kanji": "駅",
+      "ja_on": "エキ",
+      "ja_kun": "",
+      "meaning": "station",
+      "examples": "駅 (えき) station",
+      "note": ""
+    },
+    {
+      "id": 202,
+      "kanji": "験",
+      "ja_on": "ケン、ゲン",
+      "ja_kun": "",
+      "meaning": "testing; verification",
+      "examples": "経験 (けいけん) experience 試験 (しけん) exam; test",
+      "note": ""
+    },
+    {
+      "id": 203,
+      "kanji": "魚",
+      "ja_on": "ギョ",
+      "ja_kun": "さかな",
+      "meaning": "fish",
+      "examples": "魚 (さかな) fish",
+      "note": ""
+    },
+    {
+      "id": 204,
+      "kanji": "鳥",
+      "ja_on": "チョウ",
+      "ja_kun": "とり",
+      "meaning": "bird; chicken",
+      "examples": "小鳥 (ことり) small bird 鳥 (とり) bird",
+      "note": ""
+    },
+    {
+      "id": 205,
+      "kanji": "黒",
+      "ja_on": "コク",
+      "ja_kun": "くろ、くろ・い",
+      "meaning": "black",
+      "examples": "黒 (くろ) black 黒い (くろい) black",
+      "note": ""
+    }
+  ]
+}

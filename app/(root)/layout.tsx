@@ -7,6 +7,12 @@ import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/app-sidebar"
 import { TooltipProvider } from "@/components/ui/tooltip"
 
+// imports to get user
+import { cookies } from "next/headers";
+import jwt from "jsonwebtoken";
+import dbConnect from "@/database/mongodb";
+import User from "@/models/user.model";
+
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
 const geistSans = Geist({
@@ -24,7 +30,55 @@ export const metadata: Metadata = {
   description: "A collection of tools and resources for learning Japanese.",
 };
 
-export default function RootLayout({children}: Readonly<{ children: React.ReactNode }>) {
+export default async function RootLayout({children}: Readonly<{ children: React.ReactNode }>) {
+  
+  let userData = null;
+
+  try {
+    const cookieStore = await cookies();
+    const token = cookieStore.get("token")?.value;
+
+    // console.log("1. Token encontrado no cookie?:", token ? "Sim" : "Não");
+
+    if (token) {
+      const decoded = jwt.verify(token, process.env.JWT_SECRET as string) as { 
+        userId: string;
+        iat?: number;
+        exp?: number;
+      };
+      // console.log("2. O que tem dentro do token?", decoded);
+
+      await dbConnect();
+      const userDoc = await User.findById(decoded.userId).lean(); 
+      
+      console.log("User:", userDoc);
+
+      if (userDoc) {
+         userData = {
+           name: userDoc.name || "Usuário",
+           email: userDoc.email || "sem-email@teste.com",
+           avatar: userDoc.profilePicture || "",
+           level: userDoc.level || 1,
+           experience: userDoc.experience || 0
+         };
+        //  console.log("4. Objeto userData montado com sucesso:", userData);
+      } else {
+         console.log("⛔ Error, no user found with id.");
+      }
+    }
+  } catch (error) {
+    console.error("⛔ Error:", error);
+  }
+
+  // fallback
+  const fallbackUser = userData || {
+    name: "Not logged in",
+    email: "Login to save progress",
+    avatar: "",
+    level: 1,
+    experience: 0
+  }
+
   return (
     <html
       lang="en"
@@ -33,7 +87,8 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
       <body className="min-h-full flex flex-col">
         <TooltipProvider>
           <SidebarProvider>
-            <AppSidebar />
+            {/* Passamos o usuário (ou o fallback se deu erro) */}
+            <AppSidebar user={fallbackUser} />
             <main>
               <SidebarTrigger />
               {children}

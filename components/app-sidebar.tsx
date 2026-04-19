@@ -29,9 +29,9 @@ import {
 // This is sample data.
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    name: "user",
+    email: "user@example.com",
+    avatar: "",
   },
   teams: [
     {
@@ -39,21 +39,10 @@ const data = {
       logo: GalleryVerticalEnd,
       plan: "",
     }
-    // ,
-    // {
-    //   name: "Acme Corp.",
-    //   logo: AudioWaveform,
-    //   plan: "Startup",
-    // },
-    // {
-    //   name: "Evil Corp.",
-    //   logo: Command,
-    //   plan: "Free",
-    // },
   ],
   navMain: [
     {
-      title: "My Cards",
+      title: "SRS Cards",
       url: "#",
       icon: SquareTerminal,
       isActive: true,
@@ -77,20 +66,24 @@ const data = {
       ],
     },
     {
-      title: "Anki Cards",
+      title: "AI",
       url: "#",
       icon: Bot,
       items: [
         {
-          title: "Genesis",
+          title: "Chat",
           url: "#",
         },
         {
-          title: "Explorer",
+          title: "Rate my Nihongo",
           url: "#",
         },
         {
-          title: "Quantum",
+          title: "Give me examples",
+          url: "#",
+        },
+        {
+          title: "JLPT Questions",
           url: "#",
         },
       ],
@@ -161,7 +154,7 @@ const data = {
   ],
 }
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export function AppSidebar({ user, ...props }: { user: any } & React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
@@ -172,7 +165,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavProjects projects={data.projects} />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser user={user} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>

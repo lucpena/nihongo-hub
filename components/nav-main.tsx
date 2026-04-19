@@ -34,7 +34,6 @@ export function NavMain({
 }) {
   return (
     <SidebarGroup>
-      {/* <SidebarGroupLabel>Platform</SidebarGroupLabel> */}
       <SidebarMenuItem>
         <SidebarMenuButton className="text-sidebar-foreground/70 cursor-pointer border mb-5">
           <HomeIcon className="text-sidebar-foreground/70" />
@@ -44,7 +43,8 @@ export function NavMain({
           <span className="text-lg font-medium underline-offset-4 hover:animate-pulse">Upload Cards</span>
         </SidebarMenuButton>
       </SidebarMenuItem>
-      
+
+      <SidebarGroupLabel>Study</SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => (
           <Collapsible
@@ -78,6 +78,8 @@ export function NavMain({
           </Collapsible>
         ))}
       </SidebarMenu>
+      <SidebarGroupLabel></SidebarGroupLabel>
+
     </SidebarGroup>
   )
 }

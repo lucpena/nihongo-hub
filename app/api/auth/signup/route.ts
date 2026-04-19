@@ -6,50 +6,49 @@ import User from '@/models/user.model';
 
 export async function POST(request: Request) {
     try {
-        // 1. Conecta ao banco de dados
+        // Connect to database
         await dbConnect();
 
-        // 2. Extrai os dados do corpo da requisição
+        // Extract data from the request
         const body = await request.json();
         const { name, email, password } = body;
 
-        // 3. Validação básica
+        // Basic validation
         if (!name || !email || !password) {
             return NextResponse.json(
-                { error: 'Por favor, preencha todos os campos.' },
+                { error: 'Fill all fields.' },
                 { status: 400 }
             );
         }
 
-        // 4. Verifica se o e-mail já está em uso
+        // Verify email
         const existingUser = await User.findOne({ email });
         if (existingUser) {
             return NextResponse.json(
-                { error: 'Este e-mail já está cadastrado.' },
+                { error: 'Email already in use.' },
                 { status: 400 }
             );
         }
 
-        // 5. Criptografa a senha (Hash)
-        // O número 10 é o "salt rounds", um bom equilíbrio entre segurança e performance
+        // Hashing the password. 10 is a good number for salt. Goog performance and safety
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        // 6. Cria o usuário no MongoDB
+        // Create the user on MongoDB
         const newUser = await User.create({
             name,
             email,
             password: hashedPassword,
-            // A imagem fica vazia por padrão, e as settings puxam o default do Model
+           // user profile image goes here
         });
 
-        // 7. Retorna sucesso (não retorne a senha, mesmo criptografada, por segurança)
+        // Success
         return NextResponse.json(
-            { message: 'Usuário criado com sucesso!', userId: newUser._id },
+            { message: 'User created.', userId: newUser._id },
             { status: 201 }
         );
 
     } catch (error) {
-        console.error('Erro no signup:', error);
+        console.error('⛔ Sign up error:', error);
         return NextResponse.json(
             { error: 'Erro interno do servidor.' },
             { status: 500 }

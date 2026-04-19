@@ -58,6 +58,7 @@ const userSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  
 }, { timestamps: true });
 
 // In Next.js, we need to check if the model already exists before creating it

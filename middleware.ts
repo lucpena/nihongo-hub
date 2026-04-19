@@ -1,41 +1,40 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-// 1. Defina as rotas que precisam de proteção (usuário logado)
+// Protected Routes
 const protectedRoutes = ['/', '/cards'];
 
-// 2. Defina as rotas exclusivas para visitantes (usuário NÃO logado)
+// Public Routes
 const authRoutes = ['/login', '/signup'];
 
 export function middleware(request: NextRequest) {
-    // Busca o token nos cookies da requisição
-    // Nota: Certifique-se de que sua rota de API de login salva o JWT em um cookie com este exato nome
+    // Fetch token in the cookies
     const token = request.cookies.get('token')?.value;
     const { pathname } = request.nextUrl;
 
     // Debbug
     console.log("Rota acessada:", pathname, "| Token:", token ? "Existe" : "Undefined");
 
-    // Lógica corrigida: Se a rota for '/', exige match exato. Se for outra, usa startsWith.
+    // Routing
     const isProtectedRoute = protectedRoutes.some(route => 
         route === '/' ? pathname === '/' : pathname.startsWith(route)
     );
 
     const isAuthRoute = authRoutes.some(route => pathname.startsWith(route));
 
-    // Regra A: Usuário sem token tentando acessar página protegida -> Redireciona para o Login
+    // No token in protectd page
     if (isProtectedRoute && !token) {
         const loginUrl = new URL('/login', request.url);
         return NextResponse.redirect(loginUrl);
     }
 
-    // Regra B: Usuário já logado tentando acessar tela de Login ou Signup -> Redireciona para o Dashboard
+    // Logen in in login/signin pages
     if (isAuthRoute && token) {
-        const dashboardUrl = new URL('/dashboard', request.url);
+        const dashboardUrl = new URL('/', request.url);
         return NextResponse.redirect(dashboardUrl);
     }
 
-    // Se não cair em nenhuma restrição, deixa a navegação seguir normalmente para renderizar a página
+    // No restrictions
     return NextResponse.next();
 }
 
