@@ -35,13 +35,20 @@ export function NavMain({
   return (
     <SidebarGroup>
       <SidebarMenuItem>
-        <SidebarMenuButton className="text-sidebar-foreground/70 cursor-pointer border mb-5">
-          <HomeIcon className="text-sidebar-foreground/70" />
-          <span className="text-lg font-medium underline-offset-4 hover:animate-pulse">Home</span>
-        </SidebarMenuButton><SidebarMenuButton className="text-sidebar-foreground/70 cursor-pointer border mb-5">
-          <UploadIcon className="text-sidebar-foreground/70" />
-          <span className="text-lg font-medium underline-offset-4 hover:animate-pulse">Upload Cards</span>
-        </SidebarMenuButton>
+        <a href="/">
+          <SidebarMenuButton className="text-sidebar-foreground/70 cursor-pointer border mb-5">
+            <HomeIcon className="text-sidebar-foreground/70" />
+            <span className="text-lg font-medium underline-offset-4 hover:animate-pulse">Home</span>
+          </SidebarMenuButton>
+        </a>
+        
+        <a href="/decks/import">
+          <SidebarMenuButton className="text-sidebar-foreground/70 cursor-pointer border mb-5">
+            <UploadIcon className="text-sidebar-foreground/70" />
+            <span className="text-lg font-medium underline-offset-4 hover:animate-pulse">Upload Cards</span>
+          </SidebarMenuButton>
+        </a>
+
       </SidebarMenuItem>
 
       <SidebarGroupLabel>Study</SidebarGroupLabel>

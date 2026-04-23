@@ -1,16 +1,21 @@
 import mongoose from 'mongoose';
 
-export interface IUser {
+export interface IUser extends Document {
     name: string;
     email: string;
-    password: string;
-    profilePicture?: string;            // Optional profile picture URL
+    password?: string; // Optional if using OAuth, but required for credentials
+    profilePicture?: string;
     settings: {
-        learningSteps: number[];        // Array of intervals in minutes for spaced repetition
-        graduatingMultiplier: number;   // Multiplier for interval when a card is graduated
+      learningSteps: number[];
+      graduatingMultiplier: number;
+      newCardsPerDay: number;
+      reviewsPerDay: number;
     };
-    level: number;                      // User's current level on the plataform
-    experience: number;                 // Total experience points earned by the user
+    level: number;
+    experience: number;
+    totalStudyTime: number; // Added to interface
+    createdAt: Date; // Injected by timestamps
+    updatedAt: Date; // Injected by timestamps
 }
 
 const userSchema = new mongoose.Schema({
@@ -41,14 +46,20 @@ const userSchema = new mongoose.Schema({
   settings: {
     learningSteps: { 
         type: [Number], 
-        // Steps in minutes (default): 5m, 20m, 25m, 60m (1h), 1440m (1d), 4320m (3d)
-        default: [5, 20, 25, 60, 1440, 4320] 
+        default: [5, 20, 25, 60, 1440, 4320]  // Steps in minutes: 5m, 20m, 25m, 60m (1h), 1440m (1d), 4320m (3d)
     },
     graduatingMultiplier: {
         type: Number,
-        // What happens when the user progresses past the last step? (e.g., 3 days * 2 = 6 days)
-        default: 2
-    }
+        default: 1
+    },
+    newCardsPerDay: {
+        type: Number,
+        default: 20
+    },
+    reviewsPerDay: { 
+      type: Number, 
+      default: 999 
+    },
   },
   level: {
     type: Number,
@@ -58,6 +69,10 @@ const userSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  totalStudyTime: { 
+  type: Number, 
+  default: 0 
+},
   
 }, { timestamps: true });
 

@@ -1,6 +1,5 @@
 import { USER_DEFAULT_STEPS, USET_DEFAULT_MULT } from "./system";
 
-
 // In React, interfaces are used to define the shape of props that a component expects. 
 // They help in type-checking and provide better code readability. 
 export interface SRSSettings {
@@ -31,6 +30,8 @@ export const calculateNextReview = (
         ? learningSteps
         : USER_DEFAULT_STEPS;
     // const multiplier = USET_DEFAULT_MULT || 1;
+
+    console.log("⚙️ steps:", steps);
 
     if( !isCorrect ) {
         // Wrong answer: the card ressets

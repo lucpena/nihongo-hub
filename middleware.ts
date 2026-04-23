@@ -28,7 +28,7 @@ export function middleware(request: NextRequest) {
         return NextResponse.redirect(loginUrl);
     }
 
-    // Logen in in login/signin pages
+    // Logenin in login/signin pages
     if (isAuthRoute && token) {
         const dashboardUrl = new URL('/', request.url);
         return NextResponse.redirect(dashboardUrl);

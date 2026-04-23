@@ -13,6 +13,8 @@ import jwt from "jsonwebtoken";
 import dbConnect from "@/database/mongodb";
 import User from "@/models/user.model";
 
+import Deck from "@/models/deck.model";
+
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
 const geistSans = Geist({
@@ -31,13 +33,18 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({children}: Readonly<{ children: React.ReactNode }>) {
-  
   let userData = null;
+
+  // available decks for current user
+  interface DeckData {
+    _id: string;
+    deck_name: string;
+  }
+  let serializedDecks: DeckData[] = [];
 
   try {
     const cookieStore = await cookies();
     const token = cookieStore.get("token")?.value;
-
     // console.log("1. Token encontrado no cookie?:", token ? "Sim" : "Não");
 
     if (token) {
@@ -49,19 +56,30 @@ export default async function RootLayout({children}: Readonly<{ children: React.
       // console.log("2. O que tem dentro do token?", decoded);
 
       await dbConnect();
-      const userDoc = await User.findById(decoded.userId).lean(); 
+      const userDoc = await User.findById(decoded.userId).lean();
+      const decks = await Deck.find({ userId: decoded.userId }).lean();
       
-      console.log("User:", userDoc);
+      // console.log("User:", userDoc);
+      console.log("User Decks:", decks);
 
       if (userDoc) {
-         userData = {
-           name: userDoc.name || "Usuário",
-           email: userDoc.email || "sem-email@teste.com",
-           avatar: userDoc.profilePicture || "",
-           level: userDoc.level || 1,
-           experience: userDoc.experience || 0
+        userData = {
+          id: userDoc._id.toString(),
+          name: userDoc.name || "Usuário",
+          email: userDoc.email || "no e-mail",
+          avatar: userDoc.profilePicture || "",
+          level: userDoc.level || 1,
+          experience: userDoc.experience || 0,
+          totalStudyTime: userDoc.totalStudyTime || 0,
          };
         //  console.log("4. Objeto userData montado com sucesso:", userData);
+
+        // Serializa os dados para enviar ao Client Component em segurança
+        serializedDecks = decks.map(deck => ({
+          _id: deck._id.toString(),
+          deck_name: deck.deck_name,
+        }));
+
       } else {
          console.log("⛔ Error, no user found with id.");
       }
@@ -87,8 +105,7 @@ export default async function RootLayout({children}: Readonly<{ children: React.
       <body className="min-h-full flex flex-col">
         <TooltipProvider>
           <SidebarProvider>
-            {/* Passamos o usuário (ou o fallback se deu erro) */}
-            <AppSidebar user={fallbackUser} />
+            <AppSidebar user={fallbackUser} decks={serializedDecks} />
             <main>
               <SidebarTrigger />
               {children}

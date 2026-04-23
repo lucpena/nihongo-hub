@@ -33,6 +33,7 @@ import {
 import { useRouter } from "next/navigation"
 import { Progress } from "./ui/progress"
 import { ACCOUNT_LEVEL_UP } from "@/lib/system"
+import { StudyTimer } from "./study-timer"
 
 export function NavUser({
   user,
@@ -43,6 +44,7 @@ export function NavUser({
     avatar: string
     level: number
     experience: number
+    totalStudyTime?: number;
   } | null // for when it's loading 
 }) {
   const { isMobile } = useSidebar()
@@ -70,11 +72,22 @@ export function NavUser({
   const nextLevelXp = ACCOUNT_LEVEL_UP; 
   const xpPercentage = Math.min((user.experience / nextLevelXp) * 100, 100);
 
+  // format the total seconds from DB to "1h 20m" format
+  const formatTotalTime = (seconds?: number) => {
+    if (!seconds) return "0m";
+    const h = Math.floor(seconds / 3600);
+    const m = Math.floor((seconds % 3600) / 60);
+    if (h > 0) return `${h}h ${m}m`;
+    return `${m}m`;
+  };
 
   return (
     <SidebarMenu>
       <SidebarMenuItem>
         <DropdownMenu>
+          <div className="px-1 py-1">
+               <StudyTimer />
+          </div>
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
               size="lg"
@@ -99,6 +112,7 @@ export function NavUser({
               <ChevronsUpDown className="ml-auto size-4" />
             </SidebarMenuButton>
           </DropdownMenuTrigger>
+          
           <DropdownMenuContent
             className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg"
             side={isMobile ? "bottom" : "right"}
@@ -127,8 +141,15 @@ export function NavUser({
                   </span>
                 </div>
               </div>
+              <div className="px-2 py-1.5 text-xs text-muted-foreground flex items-center justify-between">
+                <span>Total Study Time:</span>
+                <span className="font-bold text-primary">{formatTotalTime(user.totalStudyTime)}</span>
+              </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
+            {/* <div className="px-1 py-1">
+               <StudyTimer />
+            </div> */}
             <DropdownMenuItem onClick={handleLogout} className="cursor-pointer">
               <LogOut className="mr-2 h-4 w-4" />
               Log out

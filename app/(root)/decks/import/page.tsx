@@ -12,6 +12,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 
 interface PreviewCard {
   face?: string;
@@ -35,6 +37,7 @@ export default function ImportDeckPage() {
   const [isUploading, setIsUploading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const [isPrivate, setIsPrivate] = useState(true);
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     setErrorMessage("");
@@ -71,10 +74,16 @@ export default function ImportDeckPage() {
     setErrorMessage("");
 
     try {
+      // adding private
+      const payload = {
+        ...previewData,
+        isPublic: !isPrivate, // Se isPrivate for true, isPublic será false
+      };
+
       const response = await fetch("/api/decks/import", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(previewData),
+        body: JSON.stringify(payload),
       });
 
       const result = await response.json();
@@ -88,7 +97,7 @@ export default function ImportDeckPage() {
 
       // Optionally redirect after a short delay
       setTimeout(() => {
-        router.push("/dashboard");
+        router.push("/");
         router.refresh();
       }, 2000);
     } catch (error: any) {
@@ -117,6 +126,23 @@ export default function ImportDeckPage() {
         />
       </div>
 
+      {previewData &&
+        <div className="flex items-center space-x-2">
+          <Checkbox 
+            id="private-deck" 
+            checked={isPrivate} 
+            onCheckedChange={(checked) => setIsPrivate(checked as boolean)}
+            disabled={isUploading}
+          />
+          <Label
+            htmlFor="private-deck" 
+            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          >
+            Manter este deck privado (visível apenas para mim)
+          </Label>
+        </div>
+      }
+
       {errorMessage && (
         <div className="p-4 bg-red-100 text-red-700 rounded-md">
           {errorMessage}
@@ -135,7 +161,7 @@ export default function ImportDeckPage() {
             <h2 className="text-xl font-semibold">
               Preview: {previewData.deck_name}
             </h2>
-            <Button onClick={confirmUpload} disabled={isUploading}>
+            <Button onClick={confirmUpload} disabled={isUploading} className="cursor-pointer">
               {isUploading ? "Importing..." : "Confirm & Import"}
             </Button>
           </div>

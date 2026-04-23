@@ -1,11 +1,11 @@
 import mongoose, { Document, Schema } from "mongoose";
 
 export interface ICard extends Document {
-    deckId: mongoose.Types.ObjectId;            // Deck reference
-    userId: mongoose.Types.ObjectId;            // User reference
+    deckId: mongoose.Types.ObjectId;                 // Deck reference
+    userId: mongoose.Types.ObjectId;                 // User reference
     type: 'grammar' | 'vocabulary' | 'kanji';   // Type of card (grammar or vocabulary)
-    content: Record<string, any>;               // Flexible object to hold ANY structure
-    face: string;                               // Face fields
+    content: Record<string, any>;                    //Flexible object to hold ANY structure
+    face: string;                                    // Face fields
 }
 
 const CardSchema = new mongoose.Schema({
