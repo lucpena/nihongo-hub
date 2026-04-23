@@ -3,6 +3,7 @@ import dbConnect from "@/database/mongodb";
 import Deck from "@/models/deck.model";
 import Card from "@/models/card.model";
 import jwt from "jsonwebtoken";
+import { configJsonSchema } from "shadcn/schema";
 
 export async function POST(request: NextRequest) {
   try {
@@ -19,14 +20,16 @@ export async function POST(request: NextRequest) {
 
     // parsing the JSON
     const data = await request.json();
-    const { deck_name, cards } = data;
+    
+    const { deck_name, cards, type, isPublic } = data;
+    console.log("data: ", type);
 
     if (!deck_name || !cards || !Array.isArray(cards)) {
       return NextResponse.json({ error: "Invalid JSON format." }, { status: 400 });
     }
 
     // check if decks already exists
-    const existingDeck = await Deck.findOne({ name: deck_name, userId });
+    const existingDeck = await Deck.findOne({ deck_name: deck_name, userId });
     
     if (existingDeck) {
       return NextResponse.json(
@@ -37,18 +40,18 @@ export async function POST(request: NextRequest) {
 
     // create the deck
     const newDeck = await Deck.create({
-      name: deck_name,
+      deck_name: deck_name,
       userId: userId,
-      isPublic: false, // Default to private
+      isPublic: isPublic !== undefined ? isPublic : false,
     });
 
     // format card for MongoDB
     const cardsToInsert = cards.map((card: any) => ({
       deckId: newDeck._id,
       userId: userId,
-      type: card.type || "type", // fallback type
+      type: type, // fallback type
       content: card, // Store all flexible Anki data here
-      face: card.kanji || card.grammar || card.face || "Unknown Front",
+      face: card.kanji || card.grammar || card.face,
       interval: 1,
       repetition: 0,
       stepIndex: 0,

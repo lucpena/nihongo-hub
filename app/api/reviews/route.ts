@@ -1,16 +1,16 @@
 import { NextResponse } from "next/server";
 import connectToDatabase from "@/database/mongodb";
-import connectToDatabaseDry from "@/database/mongodb-dry";
-import Progress from "@/models/progress.model"
+import Progress from "@/models/progress.model";
 import User from "@/models/user.model";
+import Card from "@/models/card.model";
+import ReviewLog from "@/models/review-log.model";
 import { calculateNextReview } from "@/lib/srs";
 import { XP_VALUES, getXpForNextLevel } from "@/lib/system";
 
 export async function POST(request: Request){
     try {
-        // Lets try to connect to the data bank
+        // connect to the database
         await connectToDatabase();
-        // await connectToDatabaseDry();    // connection withou the lerolero
 
         // Extraction the data sent from the front end
         const body = await request.json();
@@ -20,12 +20,33 @@ export async function POST(request: Request){
             return NextResponse.json({ error: "⛔ Missing required fields."}, { status: 400 });
         }
 
-        // Get progress from data base
-        const progress = await Progress.findOne({userId, cardId});
+        // Get progress, user, and card from database
+        let progress = await Progress.findOne({userId, cardId});
         const user = await User.findById(userId);
+        const card = await Card.findById(cardId).select("deckId"); // Fetching only the deckId to save memory
 
-        if( !progress || !user ) {
-            return NextResponse.json({ error: "⛔ Progress or User not found" }, { status: 404 });
+        // console.log("=== DEBUG MONGODB ===");
+        // console.log("UserID recebido:", userId);
+        // console.log("CardID recebido:", cardId);
+        // console.log("Achou User?", !!user);
+        // console.log("Achou Card?", !!card);
+        // console.log("Achou Progress?", !!progress);
+
+        if( !user || !card ) {
+            return NextResponse.json({ error: "⛔ Progress, User, or Card not found" }, { status: 404 });
+        }
+
+        // Se for uma carta NOVA (não tem progresso), criamos um progresso do zero
+        if (!progress) {
+            progress = new Progress({
+                userId: userId,
+                cardId: cardId,
+                deckId: card.deckId,
+                stepIndex: 0,
+                interval: 0,
+                repetition: 0,
+                dueDate: new Date(),
+            });
         }
 
         // Begin the SRS
@@ -40,9 +61,12 @@ export async function POST(request: Request){
         );
 
         // Check if card is graduating
-        const cardGraduated = isCorrect && progress.stepIndex < user.settings.learningSteps.length - 1 && srsResult.stepIndex === user.settings.learningSteps.length -1;
+        const cardGraduated = 
+            isCorrect && 
+            progress.stepIndex < user.settings.learningSteps.length - 1 &&
+            srsResult.stepIndex === user.settings.learningSteps.length -1;
 
-        progress.setIndex   = srsResult.stepIndex;
+        progress.stepIndex  = srsResult.stepIndex; 
         progress.interval   = srsResult.interval;
         progress.dueDate    = srsResult.dueDate;
         progress.repetition = isCorrect ? progress.repetition + 1 : 0;
@@ -60,13 +84,26 @@ export async function POST(request: Request){
             // Check if level up
             const xpNeeded = getXpForNextLevel(user.level);
             if( user.experience >= xpNeeded ) {
-                user.level += 1;
-                leveledUp   = true;
+                user.level      += 1;
+                leveledUp       = true;
+                user.experience = 0;
             }
         }
 
-        // Saving everything to db
-        await Promise.all([progress.save(), user.save()]);
+        const newReviewLog = new ReviewLog({
+            userId: userId,
+            cardId: cardId,
+            deckId: card.deckId, // Saving the deck reference for fast Dashboard queries!
+            isCorrect: isCorrect,
+            reviewedAt: new Date()
+        });
+
+        // Saving everything to db concurrently
+        await Promise.all([
+            progress.save(), 
+            user.save(),
+            newReviewLog.save()
+        ]);
 
         // Response
         return NextResponse.json({
@@ -74,7 +111,7 @@ export async function POST(request: Request){
             xpEarned,
             leveledUp,
             newLevel: user.level,
-            nexrReview: progress.dueDate
+            nextReview: progress.dueDate
         }, { status: 200 });
 
     } catch (error) {
