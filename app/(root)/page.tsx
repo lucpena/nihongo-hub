@@ -1,46 +1,110 @@
-import connectToDatabase from "@/database/mongodb";
-import User from "@/models/user.model";
 import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
-import { OverviewCharts } from "@/components/overview-charts";
+import { redirect } from "next/navigation";
+import dbConnect from "@/database/mongodb";
+import User from "@/models/user.model";
+import ReviewLog from "@/models/review-log.model";
+import Progress from "@/models/progress.model";
+import DashboardClient from "@/components/dashboard-client";
+import { ACCOUNT_LEVEL_UP } from "@/lib/system";
 
 export default async function DashboardPage() {
-  // 1. Get the user from the token to display "Welcome, {user}"
-  await connectToDatabase();
+  // 1. Authenticate User
   const cookieStore = await cookies();
   const token = cookieStore.get("token")?.value;
-  
-  let userName = "Student";
+  if (!token) redirect("/login");
 
-  if (token) {
-    try {
-      const decoded = jwt.verify(token, process.env.JWT_SECRET!) as { userId: string };
-      const user = await User.findById(decoded.userId).select("name");
-      if (user) userName = user.name;
-    } catch (error) {
-      console.error("Error decoding token for dashboard:", error);
-    }
+  let decoded;
+  try {
+    decoded = jwt.verify(token, process.env.JWT_SECRET as string) as { userId: string };
+  } catch (error) {
+    redirect("/login");
   }
 
-  // NOTE: Here you will eventually fetch the real aggregated data from the Progress model.
-  // For now, we pass placeholder data to build the strict layout.
+  await dbConnect();
+
+  // 2. Fetch User Data
+  const user = await User.findById(decoded.userId).lean();
+  if (!user) redirect("/login");
+
+  // 3. Time Calculations (Today vs Last 7 Days)
+  const now = new Date();
+  const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const sevenDaysAgo = new Date(startOfToday);
+  sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 6);
+
+  // 4. Fetch Due Cards (Cards waiting for review today)
+  const dueCardsCount = await Progress.countDocuments({
+    userId: user._id,
+    dueDate: { $lte: now },
+  });
+
+  // 5. Fetch Today's Stats (Accuracy and Total Reviews)
+  const todaysLogs = await ReviewLog.find({
+    userId: user._id,
+    createdAt: { $gte: startOfToday },
+  }).lean();
+
+  const reviewsToday = todaysLogs.length;
+  const correctReviewsToday = todaysLogs.filter((log) => log.isCorrect).length;
+  const accuracyToday = reviewsToday > 0 ? Math.round((correctReviewsToday / reviewsToday) * 100) : 0;
+
+  // 6. Fetch 7-Day Chart Data (Aggregation Pipeline)
+  const weeklyDataRaw = await ReviewLog.aggregate([
+    {
+      $match: {
+        userId: user._id,
+        createdAt: { $gte: sevenDaysAgo },
+      },
+    },
+    {
+      $group: {
+        _id: { $dateToString: { format: "%Y-%m-%d", date: "$createdAt" } },
+        totalStudied: { $sum: 1 },
+      },
+    },
+    { $sort: { _id: 1 } },
+  ]);
+
+  // Fill empty days for the chart to look continuous
+  const weeklyData = [];
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date(now);
+    d.setDate(d.getDate() - i);
+    const dateString = d.toISOString().split("T")[0];
+    
+    const found = weeklyDataRaw.find((item) => item._id === dateString);
+    weeklyData.push({
+      date: dateString,
+      studied: found ? found.totalStudied : 0,
+    });
+  }
+
+  // Format Total Study Time (Seconds to HH:MM)
+  const totalSeconds = user.totalStudyTime || 0;
+  const studyHours = Math.floor(totalSeconds / 3600);
+  const studyMinutes = Math.floor((totalSeconds % 3600) / 60);
+  const formattedStudyTime = `${studyHours}h ${studyMinutes}m`;
+
+  // Calculate XP percentage for the progress bar
+  const xpForNextLevel = ACCOUNT_LEVEL_UP; // Adjust this if your logic in lib/system is different
+  const xpPercentage = Math.min(100, Math.round((user.experience / xpForNextLevel) * 100));
 
   return (
-    <main className="flex flex-col h-screen max-h-screen overflow-hidden p-6 bg-background">
-      {/* Header Section */}
-      <header className="mb-6 shrink-0">
-        <h1 className="text-3xl font-bold tracking-tight">
-          Welcome, {userName}!
-        </h1>
-        <p className="text-muted-foreground">
-          Here is your study progress at a glance.
-        </p>
-      </header>
-
-      {/* Charts and Stats Section - Takes up the remaining height */}
-      <section className="flex-1 overflow-hidden">
-        <OverviewCharts />
-      </section>
-    </main>
+    <DashboardClient 
+      user={{
+        name: user.name,
+        level: user.level,
+        experience: user.experience,
+        xpPercentage,
+        formattedStudyTime
+      }}
+      stats={{
+        reviewsToday,
+        accuracyToday,
+        dueCardsCount
+      }}
+      chartData={weeklyData}
+    />
   );
 }

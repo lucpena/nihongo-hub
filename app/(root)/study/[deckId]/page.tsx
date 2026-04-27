@@ -24,13 +24,13 @@ export default async function StudyPage({ params }: { params: Promise<{ deckId: 
 
   // fetch all cards belonging to this deck
   const allDeckCards = await Card.find({ deckId }).lean();
-  const cardIds = allDeckCards.map(c => c._id);
+  // const cardIds = allDeckCards.map(c => c._id);
 
   // fetch current progress for these cards
-const userProgress = await Progress.find({
+  const userProgress = await Progress.find({
     userId: user._id,
     deckId: deckId // <-- Busca direta, sem precisar do array de cartas!
-}).lean();
+  }).lean();
 
   //separate review cards from new cards
   const now = new Date();

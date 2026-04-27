@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress as ProgressBar } from "@/components/ui/progress";
 import { useRouter } from "next/navigation";
+import { FuriganaText } from "./furigana";
 
 interface StudyCard {
   id: string;
@@ -70,20 +71,67 @@ export default function StudySession({ initialCards, deckId, userId }: {
       </div>
 
       <Card 
-        className="w-full max-w-2xl min-h-[400px] cursor-pointer flex items-center justify-center relative overflow-hidden transition-all duration-300 hover:shadow-lg"
+        className="w-full max-w-4xl min-h-[400px] cursor-pointer flex items-center justify-center relative overflow-hidden transition-all duration-300 hover:shadow-lg"
         onClick={() => !isFlipped && setIsFlipped(true)}
       >
         <CardContent className="p-12 flex flex-col items-center justify-center text-center">
           {!isFlipped ? (
             <h2 className="text-5xl font-bold tracking-tight">{currentCard.face}</h2>
           ) : (
-            <div className="flex flex-col gap-6 animate-in fade-in zoom-in duration-300">
+            <div className="flex flex-col gap-6 animate-in fade-in zoom-in duration-300 w-full">
               <h2 className="text-3xl font-bold border-b pb-4 opacity-50">{currentCard.face}</h2>
-              <div className="text-2xl text-primary font-medium">
-                {typeof currentCard.content === 'string' 
-                  ? currentCard.content 
-                  : currentCard.content?.meaning || JSON.stringify(currentCard.content)}
-              </div>
+              
+              {typeof currentCard.content === 'string' ? (
+                // simple text
+                <div className="text-2xl text-primary font-medium">
+                  {currentCard.content}
+                </div>
+              ) : (
+                // JSON processing
+                <>
+                  {/* meaning */}
+                  <div className="text-2xl text-primary font-medium">
+                    {currentCard.content?.meaning || JSON.stringify(currentCard.content)}
+                  </div>
+
+                  {/* example 1 */}
+                  {(currentCard.content?.ex1_ja_furigana || currentCard.content?.ex1_ja || currentCard.content?.examples) && (
+                    <div className="flex flex-col gap-2 border-t pt-4">
+                      <FuriganaText 
+                        text={currentCard.content?.ex1_ja_furigana || currentCard.content?.ex1_ja || currentCard.content?.examples} 
+                        className="text-3xl font-bold" 
+                      />
+                      {currentCard.content?.ex1_en && (
+                        <div className="text-xl font-thin">
+                          {currentCard.content.ex1_en}
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* example 2 if exists */}
+                  {(currentCard.content?.ex2_ja_furigana || currentCard.content?.ex2_ja) && (
+                    <div className="flex flex-col gap-2 pt-4">
+                      <FuriganaText 
+                        text={currentCard.content?.ex2_ja_furigana || currentCard.content?.ex2_ja} 
+                        className="text-3xl font-bold" 
+                      />
+                      {currentCard.content?.ex2_en && (
+                        <div className="text-xl font-thin">
+                          {currentCard.content.ex2_en}
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* notes if exists*/}
+                  {currentCard.content?.note && (
+                    <div className="text-xl font-medium rounded-2xl mt-4 py-6 px-2 bg-gray-100">
+                      "{currentCard.content.note}"
+                    </div>
+                  )}
+                </>
+              )}
             </div>
           )}
         </CardContent>

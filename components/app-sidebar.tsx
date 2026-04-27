@@ -12,6 +12,9 @@ import {
   PieChart,
   Settings2,
   SquareTerminal,
+  StarsIcon,
+  TagsIcon,
+  UploadIcon,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
@@ -148,9 +151,9 @@ export function AppSidebar({
 
   const dynamicNavMain = [
     {
-      title: "My Decks",
+      title: "Decks",
       url: "#",
-      icon: SquareTerminal,
+      icon: TagsIcon,
       isActive: true, // Keeps the folder open by default
       // Here we map your MongoDB decks into Shadcn UI items
       items: decks.map((deck) => ({
@@ -161,7 +164,7 @@ export function AppSidebar({
     {
       title: "AI Tools",
       url: "#",
-      icon: Bot,
+      icon: StarsIcon,
       items: [
         { title: "Chat", url: "#" },
         { title: "Rate my Nihongo", url: "#" },
@@ -169,17 +172,17 @@ export function AppSidebar({
         { title: "JLPT Questions", url: "#" },
       ],
     },
-    {
-      title: "Settings",
-      url: "#",
-      icon: Settings2,
-      items: [
-        { title: "General", url: "#" },
-        { title: "Team", url: "#" },
-        { title: "Billing", url: "#" },
-        { title: "Limits", url: "#" },
-      ],
-    },
+    // {
+    //   title: "Settings",
+    //   url: "#",
+    //   icon: Settings2,
+    //   items: [
+    //     { title: "General", url: "#" },
+    //     { title: "Team", url: "#" },
+    //     { title: "Billing", url: "#" },
+    //     { title: "Limits", url: "#" },
+    //   ],
+    // },
   ];
 
   // 3. Static data for Teams and Projects
@@ -194,19 +197,19 @@ export function AppSidebar({
   const staticProjects = [
     {
       name: "Upload Cards",
-      url: "/decks/import", // Linked to the actual page you built!
-      icon: Frame,
+      url: "/decks/import",
+      icon: UploadIcon,
     },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
-    },
+    // {
+    //   name: "Sales & Marketing",
+    //   url: "#",
+    //   icon: PieChart,
+    // },
+    // {
+    //   name: "Travel",
+    //   url: "#",
+    //   icon: Map,
+    // },
   ];
 
   return (
