@@ -1,12 +1,12 @@
 import React from 'react';
-import { cn } from "@/lib/utils"; // Importando o utilitário do Shadcn
+import { cn } from "@/lib/utils";
 
 export function FuriganaText({ 
   text, 
   className 
 }: { 
   text: string; 
-  className?: string; // Declaramos que o className é opcional
+  className?: string;
 }) {
   const regex = /([^\s\[\]]+)\[([^\]]+)\]/g;
   const elements = [];
@@ -32,7 +32,6 @@ export function FuriganaText({
     elements.push(text.substring(lastIndex));
   }
 
-  // Passamos a propriedade className para a tag root (span) usando o cn()
   return (
     <span className={cn(className)}>
       {elements.length > 0 ? elements : text}

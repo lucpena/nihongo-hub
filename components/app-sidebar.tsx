@@ -3,15 +3,9 @@
 import * as React from "react"
 import {
   AudioWaveform,
-  BookOpen,
-  Bot,
   Command,
-  Frame,
   GalleryVerticalEnd,
-  Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
+  Gamepad2,
   StarsIcon,
   TagsIcon,
   UploadIcon,
@@ -166,23 +160,20 @@ export function AppSidebar({
       url: "#",
       icon: StarsIcon,
       items: [
-        { title: "Chat", url: "#" },
+        { title: "Chat", url: "/ai/chat" },
         { title: "Rate my Nihongo", url: "#" },
         { title: "Give me examples", url: "#" },
         { title: "JLPT Questions", url: "#" },
       ],
     },
-    // {
-    //   title: "Settings",
-    //   url: "#",
-    //   icon: Settings2,
-    //   items: [
-    //     { title: "General", url: "#" },
-    //     { title: "Team", url: "#" },
-    //     { title: "Billing", url: "#" },
-    //     { title: "Limits", url: "#" },
-    //   ],
-    // },
+    {
+      title: "Game Modes",
+      url: "#",
+      icon: Gamepad2,
+      items: [
+        { title: "Review Bomb", url: "/games/review-bomb" },
+      ],
+    },
   ];
 
   // 3. Static data for Teams and Projects

@@ -2,8 +2,12 @@
 
 export const XP_VALUES = {
     CARD_CORRECT_ANSWER: 50,    // XP for a correct answer
-    CARD_GRADUATION: 100,        // XP for graduating a card
+    CARD_GRADUATION: 100,       // XP for graduating a card
     CARD_NEW: 5,                // XP for starting a new card
+};
+
+export const XP_VALUES_MINIGAMES = {
+    BOMB_CORRECT_ANSWER: 20,     // XP for a correct answer on Review Bomb
 };
 
 export const ACCOUNT_LEVEL_UP = 1000;

@@ -60,7 +60,7 @@ export default async function RootLayout({children}: Readonly<{ children: React.
       const decks = await Deck.find({ userId: decoded.userId }).lean();
       
       // console.log("User:", userDoc);
-      console.log("User Decks:", decks);
+      // console.log("User Decks:", decks);
 
       if (userDoc) {
         userData = {

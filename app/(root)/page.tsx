@@ -23,23 +23,23 @@ export default async function DashboardPage() {
 
   await dbConnect();
 
-  // 2. Fetch User Data
+  // fetch User Data
   const user = await User.findById(decoded.userId).lean();
   if (!user) redirect("/login");
 
-  // 3. Time Calculations (Today vs Last 7 Days)
+  // time Calculations (Today vs Last 7 Days)
   const now = new Date();
   const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   const sevenDaysAgo = new Date(startOfToday);
-  sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 6);
+  sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 14);
 
-  // 4. Fetch Due Cards (Cards waiting for review today)
+  // fetch Due Cards (Cards waiting for review today)
   const dueCardsCount = await Progress.countDocuments({
     userId: user._id,
     dueDate: { $lte: now },
   });
 
-  // 5. Fetch Today's Stats (Accuracy and Total Reviews)
+  // fetch today's stats (Accuracy and Total Reviews)
   const todaysLogs = await ReviewLog.find({
     userId: user._id,
     createdAt: { $gte: startOfToday },
@@ -49,17 +49,24 @@ export default async function DashboardPage() {
   const correctReviewsToday = todaysLogs.filter((log) => log.isCorrect).length;
   const accuracyToday = reviewsToday > 0 ? Math.round((correctReviewsToday / reviewsToday) * 100) : 0;
 
-  // 6. Fetch 7-Day Chart Data (Aggregation Pipeline)
+  // fetch 7-Day Chart Data (Aggregation Pipeline)
   const weeklyDataRaw = await ReviewLog.aggregate([
     {
       $match: {
         userId: user._id,
-        createdAt: { $gte: sevenDaysAgo },
+        reviewedAt: { $gte: sevenDaysAgo },
       },
     },
     {
       $group: {
-        _id: { $dateToString: { format: "%Y-%m-%d", date: "$createdAt" } },
+        _id: { 
+          $dateToString: { 
+            format: "%Y-%m-%d", 
+            date: "$reviewedAt",
+            // Força o MongoDB a agrupar usando o seu fuso horário (ajuste se necessário)
+            timezone: "America/Sao_Paulo" 
+          } 
+        },
         totalStudied: { $sum: 1 },
       },
     },
@@ -68,10 +75,15 @@ export default async function DashboardPage() {
 
   // Fill empty days for the chart to look continuous
   const weeklyData = [];
-  for (let i = 6; i >= 0; i--) {
+  for (let i = 14; i >= 0; i--) {
     const d = new Date(now);
     d.setDate(d.getDate() - i);
-    const dateString = d.toISOString().split("T")[0];
+    
+    // Constrói a string YYYY-MM-DD usando a data LOCAL, evitando o timezone shift do toISOString()
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const day = String(d.getDate()).padStart(2, "0");
+    const dateString = `${year}-${month}-${day}`;
     
     const found = weeklyDataRaw.find((item) => item._id === dateString);
     weeklyData.push({
@@ -87,7 +99,7 @@ export default async function DashboardPage() {
   const formattedStudyTime = `${studyHours}h ${studyMinutes}m`;
 
   // Calculate XP percentage for the progress bar
-  const xpForNextLevel = ACCOUNT_LEVEL_UP; // Adjust this if your logic in lib/system is different
+  const xpForNextLevel = ACCOUNT_LEVEL_UP;
   const xpPercentage = Math.min(100, Math.round((user.experience / xpForNextLevel) * 100));
 
   return (

@@ -12,7 +12,7 @@ export async function POST(request: Request){
         // connect to the database
         await connectToDatabase();
 
-        // Extraction the data sent from the front end
+        // extraction the data sent from the front end
         const body = await request.json();
         const { userId, cardId, isCorrect } = body;
 
@@ -23,7 +23,7 @@ export async function POST(request: Request){
         // Get progress, user, and card from database
         let progress = await Progress.findOne({userId, cardId});
         const user = await User.findById(userId);
-        const card = await Card.findById(cardId).select("deckId"); // Fetching only the deckId to save memory
+        const card = await Card.findById(cardId).select("deckId"); // fetching only the deckId to save memory
 
         // console.log("=== DEBUG MONGODB ===");
         // console.log("UserID recebido:", userId);
@@ -36,7 +36,7 @@ export async function POST(request: Request){
             return NextResponse.json({ error: "⛔ Progress, User, or Card not found" }, { status: 404 });
         }
 
-        // Se for uma carta NOVA (não tem progresso), criamos um progresso do zero
+        // new progress for new cards
         if (!progress) {
             progress = new Progress({
                 userId: userId,
@@ -49,7 +49,7 @@ export async function POST(request: Request){
             });
         }
 
-        // Begin the SRS
+        // begin the SRS
         const srsResult = calculateNextReview(
             isCorrect,
             progress.stepIndex,
@@ -60,7 +60,7 @@ export async function POST(request: Request){
             }
         );
 
-        // Check if card is graduating
+        // check if card is graduating
         const cardGraduated = 
             isCorrect && 
             progress.stepIndex < user.settings.learningSteps.length - 1 &&
@@ -71,7 +71,7 @@ export async function POST(request: Request){
         progress.dueDate    = srsResult.dueDate;
         progress.repetition = isCorrect ? progress.repetition + 1 : 0;
 
-        // Experience handle
+        // experience handle
         let leveledUp = false;
         let xpEarned = 0;
 
@@ -81,7 +81,7 @@ export async function POST(request: Request){
 
             user.experience += xpEarned;
 
-            // Check if level up
+            // check if level up
             const xpNeeded = getXpForNextLevel(user.level);
             if( user.experience >= xpNeeded ) {
                 user.level      += 1;
@@ -93,12 +93,12 @@ export async function POST(request: Request){
         const newReviewLog = new ReviewLog({
             userId: userId,
             cardId: cardId,
-            deckId: card.deckId, // Saving the deck reference for fast Dashboard queries!
+            deckId: card.deckId, // for dashboard
             isCorrect: isCorrect,
             reviewedAt: new Date()
         });
 
-        // Saving everything to db concurrently
+        // saving everything to db concurrently
         await Promise.all([
             progress.save(), 
             user.save(),
