@@ -29,7 +29,7 @@ export default async function StudyPage({ params }: { params: Promise<{ deckId: 
   // fetch current progress for these cards
   const userProgress = await Progress.find({
     userId: user._id,
-    deckId: deckId // <-- Busca direta, sem precisar do array de cartas!
+    deckId: deckId
   }).lean();
 
   //separate review cards from new cards
@@ -43,14 +43,14 @@ export default async function StudyPage({ params }: { params: Promise<{ deckId: 
       return { ...cardData, progress: p };
     });
 
-  // New Cards: stepIndex is 0 (New) OR no progress record exists yet
+  // new cards: stepIndex is 0 (New) OR no progress record exists yet
   const cardsWithProgressIds = userProgress.map(p => p.cardId.toString());
   const newCardsPotential = allDeckCards.filter(c => 
     !cardsWithProgressIds.includes(c._id.toString()) || 
     userProgress.find(p => p.cardId.toString() === c._id.toString())?.stepIndex === 0
   );
 
-  // Apply User Limit for New Cards (e.g., 20 per day)
+  // apply user limit for new cards
   const newCardsLimit = user.settings?.newCardsPerDay || 20;
   const newCards = newCardsPotential.slice(0, newCardsLimit).map(c => {
     const p = userProgress.find(up => up.cardId.toString() === c._id.toString());
@@ -61,7 +61,7 @@ export default async function StudyPage({ params }: { params: Promise<{ deckId: 
   const sessionQueue = [...reviewCards, ...newCards].map(item => ({
     id: item._id.toString(),
     face: item.face,
-    content: item.content, // Make sure your Card model has this
+    content: item.content,
     type: item.type,
     progressId: item.progress?._id?.toString() || null,
   }));

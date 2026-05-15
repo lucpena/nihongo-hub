@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import { 
   Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
@@ -14,6 +14,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Bot, User, Send, Server } from "lucide-react";
 import parse, { HTMLReactParserOptions } from 'html-react-parser';
 import { FuriganaText } from '@/components/furigana';
+import ReactMarkdown from 'react-markdown';
 
 type Message = {
   role: "user" | "assistant";
@@ -35,6 +36,19 @@ export default function OllamaChatPage() {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  const playBeep = () => {
+    const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+    oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+    oscillator.type = 'square';
+    gainNode.gain.setValueAtTime(0.05, audioContext.currentTime);
+    oscillator.start(audioContext.currentTime);
+    oscillator.stop(audioContext.currentTime + 0.01);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -73,6 +87,8 @@ export default function OllamaChatPage() {
 
         const textChunk = decoder.decode(value, { stream: true });
 
+        if (textChunk.length % 10 > 8) playBeep();
+
         // Atualiza apenas a última mensagem (a do assistente) com a nova letra/palavra
         setMessages((prev) => {
           const newMessages = [...prev];
@@ -92,22 +108,34 @@ export default function OllamaChatPage() {
   };
 
   // custom parsing options to replace <furigana> tags with our FuriganaText component
-  const parseOptions: HTMLReactParserOptions = {
-    replace: (domNode: any) => {
-      // O parser sempre lê o nome das tags em minúsculo, por isso 'furigana'
-      if (domNode.type === 'tag' && domNode.name === 'furigana') {
-        let innerText = '';
-        if (domNode.children && domNode.children.length > 0) {
-          domNode.children.forEach((child: any) => {
-            if (child.type === 'text') {
-              innerText += child.data;
-            }
-          });
-        }
-        return <FuriganaText text={innerText} />;
-      }
-    }
-  };
+  // const parseOptions: HTMLReactParserOptions = {
+  //   replace: (domNode: any) => {
+  //     // O parser sempre lê o nome das tags em minúsculo, por isso 'furigana'
+  //     if (domNode.type === 'tag' && domNode.name === 'furigana') {
+  //       let innerText = '';
+  //       if (domNode.children && domNode.children.length > 0) {
+  //         domNode.children.forEach((child: any) => {
+  //           if (child.type === 'text') {
+  //             innerText += child.data;
+  //           }
+  //         });
+  //       }
+  //       return <FuriganaText text={innerText} />;
+  //     }
+  //   }
+  // };
+
+  // const withFurigana = (children: React.ReactNode) => {
+  //   return React.Children.map(children, (child) => {
+  //     if (typeof child === 'string') {
+  //       // O seu componente já tem o Regex perfeito, então basta entregar a string pra ele!
+  //       return <FuriganaText text={child} />;
+  //     }
+  //     // Se for um elemento React (ex: o react-markdown já transformou em <strong>), 
+  //     // devolvemos intacto para que ele continue o fluxo.
+  //     return child;
+  //   });
+  // };
 
   return (
     <div className="container w-4xl mx-auto py-8 h-[calc(100vh-4rem)] flex flex-col ml-20">
@@ -119,7 +147,7 @@ export default function OllamaChatPage() {
           </CardTitle>
 
           <Select value={selectedModel} onValueChange={setSelectedModel}>
-            <SelectTrigger className="w-[280px] bg-background">
+            <SelectTrigger className="w-100 bg-background">
               <Server className="w-4 h-4 mr-2 text-primary shrink-0" />
               <SelectValue placeholder="Escolha um modelo" className="truncate" />
             </SelectTrigger>
@@ -131,7 +159,7 @@ export default function OllamaChatPage() {
                 <SelectItem value="homelab|qwen3.5:latest">⭐ Qwen 3.5</SelectItem>
                 <SelectItem value="homelab|translategemma:12b">⭐ TranslateGemma 12B</SelectItem>
                 <SelectItem value="homelab|deepseek-r1:14b">⭐ DeepSeek R1 14B</SelectItem>
-                <SelectItem value="homelab|gemma4:latest">Gemma 4</SelectItem>
+                <SelectItem value="homelab|gemma4:latest">Gemma 4 e4b</SelectItem>
                 <SelectItem value="homelab|gpt-oss:latest">GPT-OSS</SelectItem>
                 <SelectItem value="homelab|llama3.1:latest">Llama 3.1 8b</SelectItem>
                 <SelectItem value="homelab|phi4-mini-reasoning:latest">Phi-4 Mini Reasoning</SelectItem>
@@ -148,8 +176,8 @@ export default function OllamaChatPage() {
                 <SelectItem value="local|qwen3.5:latest">⭐ Qwen 3.5</SelectItem>
                 <SelectItem value="local|deepseek-r1:32b">⭐ DeepSeek R1 32B</SelectItem>
                 <SelectItem value="local|deepseek-r1:14b">⭐ DeepSeek R1 14B</SelectItem>
-                <SelectItem value="local|gemma4:latest">Gemma 4</SelectItem>
-                <SelectItem value="local|gemma4:26b">Gemma 4 26B</SelectItem>
+                <SelectItem value="local|gemma4:latest">Gemma 4 e4b</SelectItem>
+                <SelectItem value="local|gemma4:26b">Gemma 4 26b</SelectItem>
                 <SelectItem value="local|gpt-oss:latest">GPT-OSS</SelectItem>
                 <SelectItem value="local|granite4.1:30b">Granite 4.1 30B</SelectItem>
                 <SelectItem value="local|granite4.1:8b">Granite 4.1 8B</SelectItem>
@@ -195,7 +223,11 @@ export default function OllamaChatPage() {
                     }`}
                   >
                     {/* normal text for user and parsed text for assistant */}
-                    {m.role === "user" ? m.content : parse(m.content, parseOptions)}
+                    {/* {m.role === "user" ? m.content : parse(m.content, parseOptions)} */}
+                    {m.role === "user" ? 
+                      m.content :
+                     <ReactMarkdown>{m.content}</ReactMarkdown>
+                    }
                     
                     {isLoading && m.role === "assistant" && index === messages.length - 1 && (
                       <span className="inline-block w-2 h-4 ml-1 bg-primary animate-pulse" />

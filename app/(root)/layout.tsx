@@ -57,10 +57,15 @@ export default async function RootLayout({children}: Readonly<{ children: React.
 
       await dbConnect();
       const userDoc = await User.findById(decoded.userId).lean();
-      const decks = await Deck.find({ userId: decoded.userId }).lean();
+      const decks = await Deck.find({ 
+          $or: [
+          { userId: decoded.userId }, // User's own decks
+          { isPublic: true },         // Public decks
+        ]
+      }).lean();
       
       // console.log("User:", userDoc);
-      // console.log("User Decks:", decks);
+      console.log("User Decks:", decks);
 
       if (userDoc) {
         userData = {

@@ -18,7 +18,7 @@ function getPrompt(fileName: string) {
 export async function POST(req: Request) {
   try {
     const { messages, model, feature } = await req.json();
-    let basePrompt = getPrompt('base-test'); // basic general instructions
+    let basePrompt = getPrompt('base'); // basic general instructions
     const featurePrompt = getPrompt(feature || 'default'); // specific instructions for the feature, if exists
     
     const [server, modelName] = (model || 'local|qwen3.6:35b').split('|');
@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     if( modelName.startsWith('translategemma') ) {
       basePrompt = getPrompt('translation');
     }
-    
+     
     const fullSystemInstructions = `${basePrompt}\n\n${featurePrompt}`.trim();
     // const fullSystemInstructions = "";
 

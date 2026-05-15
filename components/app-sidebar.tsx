@@ -161,9 +161,10 @@ export function AppSidebar({
       icon: StarsIcon,
       items: [
         { title: "Chat", url: "/ai/chat" },
-        { title: "Rate my Nihongo", url: "#" },
-        { title: "Give me examples", url: "#" },
-        { title: "JLPT Questions", url: "#" },
+        { title: "Translate", url: "/ai/translate" }
+        // { title: "Rate my Nihongo", url: "#" },
+        // { title: "Give me examples", url: "#" },
+        // { title: "JLPT Questions", url: "#" },
       ],
     },
     {

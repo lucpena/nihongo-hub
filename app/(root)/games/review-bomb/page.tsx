@@ -31,8 +31,8 @@ export default async function ReviewBombPage() {
   
   if (userProgress.length === 0) {
     return (
-      <div className="flex items-center justify-center h-full">
-        <h2 className="text-xl">Você precisa estudar algumas cartas no modo normal primeiro!</h2>
+      <div className="flex items-center justify-center m-10 p-10 bg-slate-100 rounded-2xl shadow-md">
+        <h2 className="text-xl text-slate-700">You need to study some cards first.</h2>
       </div>
     );
   }
@@ -50,7 +50,6 @@ export default async function ReviewBombPage() {
     type: card.type,
     face: card.face,
     content: card.content,
-    // Extrai o nome do deck do objeto populado, ou usa um texto padrão
     deck_name: card.deckId?.deck_name || "Unknown Deck", 
   }));
 
