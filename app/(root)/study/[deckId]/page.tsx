@@ -16,25 +16,32 @@ export default async function StudyPage({ params }: { params: Promise<{ deckId: 
   const token = cookieStore.get("token")?.value;
   if (!token) redirect("/login");
 
-  const decoded = jwt.verify(token, process.env.JWT_SECRET as string) as { userId: string };
-  await dbConnect();
+  let decoded;
+  try {
+    decoded = jwt.verify(token, process.env.JWT_SECRET as string) as { userId: string };
+  } catch (error) {
+    redirect("/login");
+  }
 
+  await dbConnect();
   const user = await User.findById(decoded.userId).lean();
   if (!user) redirect("/login");
 
   // fetch all cards belonging to this deck
   const allDeckCards = await Card.find({ deckId }).lean();
-  // const cardIds = allDeckCards.map(c => c._id);
+  const cardIds = allDeckCards.map(c => c._id);
 
   // fetch current progress for these cards
   const userProgress = await Progress.find({
     userId: user._id,
+    cardId: { $in: cardIds },
     deckId: deckId
   }).lean();
 
   //separate review cards from new cards
   const now = new Date();
-  
+  const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
   // Review Cards: Already started (stepIndex != 0) and Due Date <= now
   const reviewCards = userProgress
     .filter(p => p.stepIndex !== 0 && new Date(p.dueDate) <= now)
@@ -50,14 +57,42 @@ export default async function StudyPage({ params }: { params: Promise<{ deckId: 
     userProgress.find(p => p.cardId.toString() === c._id.toString())?.stepIndex === 0
   );
 
-  // apply user limit for new cards
-  const newCardsLimit = user.settings?.newCardsPerDay || 20;
-  const newCards = newCardsPotential.slice(0, newCardsLimit).map(c => {
-    const p = userProgress.find(up => up.cardId.toString() === c._id.toString());
-    return { ...c, progress: p || null };
+  // // apply user limit for new cards
+  // const newCardsLimit = user.settings?.newCardsPerDay || 20;
+  // const newCards = newCardsPotential.slice(0, newCardsLimit).map(c => {
+  //   const p = userProgress.find(up => up.cardId.toString() === c._id.toString());
+  //   return { ...c, progress: p || null };
+  // });
+
+  // // Combined Queue
+  // const sessionQueue = [...reviewCards, ...newCards].map(item => ({
+  //   id: item._id.toString(),
+  //   face: item.face,
+  //   content: item.content,
+  //   type: item.type,
+  //   progressId: item.progress?._id?.toString() || null,
+  // }));
+
+  // Count how many Progress documents were CREATED today (meaning first time studied)
+  const newCardsStudiedToday = await Progress.countDocuments({
+    userId: user._id,
+    deckId: deckId,
+    createdAt: { $gte: startOfToday } 
   });
 
-  // Combined Queue
+  // Get user limit and calculate the remaining allowance
+  const dailyLimit = user.settings?.newCardsPerDay || 20;
+  const remainingNewCardsLimit = Math.max(0, dailyLimit - newCardsStudiedToday);
+
+  // Slice the potential array using ONLY the remaining allowance
+  const newCards = newCardsPotential
+    .slice(0, remainingNewCardsLimit)
+    .map(c => {
+      const p = userProgress.find(up => up.cardId.toString() === c._id.toString());
+      return { ...c, progress: p || null };
+    });
+
+  // 6. Combine Queue
   const sessionQueue = [...reviewCards, ...newCards].map(item => ({
     id: item._id.toString(),
     face: item.face,

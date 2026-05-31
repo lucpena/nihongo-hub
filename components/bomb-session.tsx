@@ -99,10 +99,12 @@ export default function BombSession({ initialCards }: { initialCards: any[] }) {
                 <div>
                   {currentCard.content?.ja_kun}
                 </div>)}
-                {/* {currentCard.content?.kana && (
+                
+                {currentCard.content?.kana !== currentCard.face && (
                 <div>
                   {currentCard.content?.kana}
-                </div>)} */}
+                </div>)}
+
               </span>
             </span>
           ) : (
@@ -118,10 +120,12 @@ export default function BombSession({ initialCards }: { initialCards: any[] }) {
                   <div>
                     {currentCard.content?.ja_kun}
                   </div>)}
-                  {currentCard.content?.kana && (
+
+                  {currentCard.content?.kana !== currentCard.face && (
                   <div>
                     {currentCard.content?.kana}
                   </div>)}
+                  
                 </span>
               </span>
 

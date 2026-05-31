@@ -25,6 +25,20 @@ export function StudyTimer() {
     return () => clearInterval(interval);
   }, [status]);
 
+  // warn user if they try to leave while timer is running
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      if (status === "running") {
+        e.preventDefault();
+        e.returnValue = "";
+        return "";
+      }
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
+  }, [status]);
+
   const handlePlay = () => {
     // resset time when stop is pressed
     if (status === "stopped" || status === "idle") {
