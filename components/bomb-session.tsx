@@ -89,7 +89,10 @@ export default function BombSession({ initialCards }: { initialCards: any[] }) {
         <CardContent className="p-12 flex flex-col items-center justify-center text-center">
           {!isFlipped ? (
             <span>
-              <h2 className="text-5xl font-bold tracking-tight mb-2">{currentCard.face}</h2>
+              <FuriganaText
+                text= {currentCard.face}
+                className="text-5xl font-bold tracking-tight mb-2" 
+              />
               <span className="text-lg">
                 {currentCard.content?.ja_on && (
                 <div>

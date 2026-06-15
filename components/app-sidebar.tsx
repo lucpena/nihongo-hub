@@ -148,8 +148,7 @@ export function AppSidebar({
       title: "Decks",
       url: "#",
       icon: TagsIcon,
-      isActive: true, // Keeps the folder open by default
-      // Here we map your MongoDB decks into Shadcn UI items
+      isActive: true,
       items: decks.map((deck) => ({
         title: deck.deck_name,
         url: `/study/${deck._id}`, // Connects to the dynamic route we created
@@ -159,6 +158,7 @@ export function AppSidebar({
       title: "AI Tools",
       url: "#",
       icon: StarsIcon,
+      isActive: true,
       items: [
         { title: "Chat", url: "/ai/chat" },
         { title: "Translate", url: "/ai/translate" }
@@ -171,6 +171,7 @@ export function AppSidebar({
       title: "Game Modes",
       url: "#",
       icon: Gamepad2,
+      isActive: true,
       items: [
         { title: "Review Bomb", url: "/games/review-bomb" },
       ],

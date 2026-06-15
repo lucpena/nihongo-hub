@@ -160,6 +160,7 @@ export default function OllamaChatPage() {
                 <SelectItem value="homelab|translategemma:12b">⭐ TranslateGemma 12B</SelectItem>
                 <SelectItem value="homelab|deepseek-r1:14b">⭐ DeepSeek R1 14B</SelectItem>
                 <SelectItem value="homelab|gemma4:latest">Gemma 4 e4b</SelectItem>
+                <SelectItem value="homelab|gemma4:12b">Gemma 4 12b</SelectItem>
                 <SelectItem value="homelab|gpt-oss:latest">GPT-OSS</SelectItem>
                 <SelectItem value="homelab|llama3.1:latest">Llama 3.1 8b</SelectItem>
                 <SelectItem value="homelab|phi4-mini-reasoning:latest">Phi-4 Mini Reasoning</SelectItem>
@@ -178,14 +179,12 @@ export default function OllamaChatPage() {
                 <SelectItem value="local|deepseek-r1:14b">⭐ DeepSeek R1 14B</SelectItem>
                 <SelectItem value="local|gemma4:latest">Gemma 4 e4b</SelectItem>
                 <SelectItem value="local|gemma4:26b">Gemma 4 26b</SelectItem>
+                <SelectItem value="homelab|gemma4:12b">Gemma 4 12b</SelectItem>
                 <SelectItem value="local|gpt-oss:latest">GPT-OSS</SelectItem>
-                <SelectItem value="local|granite4.1:30b">Granite 4.1 30B</SelectItem>
                 <SelectItem value="local|granite4.1:8b">Granite 4.1 8B</SelectItem>
                 <SelectItem value="local|llama3.2:latest">Llama 3.2 3b</SelectItem>
-                <SelectItem value="local|llama3.1:latest">Llama 3.1 8b</SelectItem>
                 <SelectItem value="local|hermes3:latest">Hermes 3</SelectItem>
-                <SelectItem value="local|phi4-reasoning:plus">Phi-4 Reasoning Plus</SelectItem>
-                <SelectItem value="local|devstral-small-2:latest">Devstral Small 2</SelectItem>
+                 <SelectItem value="local|devstral-small-2:latest">Devstral Small 2</SelectItem>
                 <SelectItem value="local|qwen2.5-coder:32b">Qwen 2.5 Coder 32B</SelectItem>
                 <SelectItem value="local|deepseek-coder-v2:latest">DeepSeek Coder v2</SelectItem>
               </SelectGroup>
