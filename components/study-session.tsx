@@ -135,7 +135,7 @@ export default function StudySession({ initialCards, deckId, userId }: {
                     <div className="flex flex-col gap-2 border-t pt-4">
                       <FuriganaText 
                         text={currentCard.content?.ex1_ja_furigana || currentCard.content?.ex1_ja || currentCard.content?.examples} 
-                        className="text-3xl font-bold" 
+                        className="text-3xl font-bold"
                       />
                       {currentCard.content?.ex1_en && (
                         <div className="text-xl font-thin">

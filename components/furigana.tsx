@@ -3,10 +3,12 @@ import { cn } from "@/lib/utils";
 
 export function FuriganaText({ 
   text, 
-  className 
+  className,
+  furiganaSize = "text-xs"
 }: { 
   text: string; 
   className?: string;
+  furiganaSize?: string;
 }) {
   const regex = /([^\s\[\]]+)\[([^\]]+)\]/g;
   const elements = [];
@@ -21,7 +23,7 @@ export function FuriganaText({
     elements.push(
       <ruby key={match.index}>
         {match[1]}
-        <rt className="text-xs text-muted-foreground">{match[2]}</rt>
+        <rt className={cn(furiganaSize, "text-muted-foreground")}>{match[2]}</rt>
       </ruby>
     );
 

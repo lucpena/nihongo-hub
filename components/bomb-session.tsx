@@ -26,7 +26,7 @@ export default function BombSession({ initialCards }: { initialCards: any[] }) {
   //const [sessionStartTime, setSessionStartTime] = useState(Date.now());
 
 
-  // Embaralha logo que o componente monta
+  // shuffle cards on initial load and when initialCards changes
   useEffect(() => {
     setCards(shuffleArray(initialCards));
   }, [initialCards]);
@@ -34,7 +34,6 @@ export default function BombSession({ initialCards }: { initialCards: any[] }) {
   if (cards.length === 0) return null;
 
   const currentCard = cards[currentIndex];
-
 
   const handleAnswer = async (isCorrect: boolean) => {
     setIsSubmitting(true);
@@ -92,6 +91,7 @@ export default function BombSession({ initialCards }: { initialCards: any[] }) {
               <FuriganaText
                 text= {currentCard.face}
                 className="text-5xl font-bold tracking-tight mb-2" 
+                furiganaSize="text-xl"
               />
               <span className="text-lg">
                 {currentCard.content?.ja_on && (
@@ -113,7 +113,11 @@ export default function BombSession({ initialCards }: { initialCards: any[] }) {
           ) : (
             <div className="flex flex-col gap-6 animate-in fade-in zoom-in duration-300 w-full">
               <span>
-                <h2 className="text-5xl font-bold tracking-tight mb-2">{currentCard.face}</h2>
+                 <FuriganaText
+                text= {currentCard.face}
+                className="text-5xl font-bold tracking-tight mb-2"
+                furiganaSize="text-xl"
+                />
                 <span className="text-lg">
                   {currentCard.content?.ja_on && (
                   <div>
