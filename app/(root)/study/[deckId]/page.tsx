@@ -57,22 +57,6 @@ export default async function StudyPage({ params }: { params: Promise<{ deckId: 
     userProgress.find(p => p.cardId.toString() === c._id.toString())?.stepIndex === 0
   );
 
-  // // apply user limit for new cards
-  // const newCardsLimit = user.settings?.newCardsPerDay || 20;
-  // const newCards = newCardsPotential.slice(0, newCardsLimit).map(c => {
-  //   const p = userProgress.find(up => up.cardId.toString() === c._id.toString());
-  //   return { ...c, progress: p || null };
-  // });
-
-  // // Combined Queue
-  // const sessionQueue = [...reviewCards, ...newCards].map(item => ({
-  //   id: item._id.toString(),
-  //   face: item.face,
-  //   content: item.content,
-  //   type: item.type,
-  //   progressId: item.progress?._id?.toString() || null,
-  // }));
-
   // Count how many Progress documents were CREATED today (meaning first time studied)
   const newCardsStudiedToday = await Progress.countDocuments({
     userId: user._id,
@@ -92,8 +76,32 @@ export default async function StudyPage({ params }: { params: Promise<{ deckId: 
       return { ...c, progress: p || null };
     });
 
-  // 6. Combine Queue
-  const sessionQueue = [...reviewCards, ...newCards].map(item => ({
+  //------------------------
+  // Debug: Print out the counts for review and new cards
+  console.log(`Review Cards: ${reviewCards.length}, New Cards: ${newCards.length}, Remaining New Card Limit: ${remainingNewCardsLimit}`);
+  // Debug: Print new cards faces
+  console.log("New Cards for Session:", newCards.map(c => c.face));
+  //------------------------
+
+  // Shuffle both arrays to ensure randomness in the session
+  const shuffleArray = (array: any[]) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
+  const shuffledReviewCards = shuffleArray(reviewCards);
+  const shuffledNewCards = shuffleArray(newCards);
+
+  // Debug: Print out the shuffled cards
+  console.log("Shuffled Review Cards:", shuffledReviewCards.map(c => c.face));
+  console.log("Shuffled New Cards:", shuffledNewCards.map(c => c.face));
+
+  // Combine Queue
+  const sessionQueue = [...shuffledReviewCards, ...shuffledNewCards].map(item => ({
     id: item._id.toString(),
     face: item.face,
     content: item.content,

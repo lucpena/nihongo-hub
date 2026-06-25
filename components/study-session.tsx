@@ -71,13 +71,17 @@ export default function StudySession({ initialCards, deckId, userId }: {
       </div>
 
       <Card 
-        className="w-full max-w-4xl min-h-[400px]  flex items-center justify-center relative overflow-hidden transition-all duration-300 hover:shadow-lg"
+        className="w-full max-w-4xl min-h-100 flex items-center justify-center relative overflow-hidden transition-all duration-300 hover:shadow-lg"
         onClick={() => !isFlipped && setIsFlipped(true)}
       >
         <CardContent className="p-12 flex flex-col items-center justify-center text-center">
           {!isFlipped ? (
             <span>
-              <h2 className="text-5xl font-bold tracking-tight mb-2">{currentCard.face}</h2>
+              <FuriganaText
+                text= {currentCard.face}
+                className="text-5xl font-bold tracking-tight mb-2" 
+                furiganaSize="text-xl"
+              />
               <span className="text-lg">
                 {currentCard.content?.ja_on && (
                 <div>
@@ -98,7 +102,11 @@ export default function StudySession({ initialCards, deckId, userId }: {
           ) : (
             <div className="flex flex-col gap-6 animate-in fade-in zoom-in duration-300 w-full">
               <span>
-                <h2 className="text-5xl font-bold tracking-tight mb-2">{currentCard.face}</h2>
+                <FuriganaText
+                  text={currentCard.face}
+                  className="text-5xl font-bold tracking-tight mb-2"
+                  furiganaSize="text-xl"
+                />
                 <span className="text-lg">
                   {currentCard.content?.ja_on && (
                   <div>

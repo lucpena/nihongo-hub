@@ -36,7 +36,7 @@ export default function DashboardClient({ user, stats, chartData }: DashboardPro
         </div>
         
         {/* Gamification Badge */}
-        <div className="bg-card border rounded-xl p-4 min-w-[250px] shadow-sm">
+        <div className="bg-card border rounded-xl p-4 min-w-62.5 shadow-sm">
           <div className="flex justify-between items-center mb-2">
             <span className="font-semibold text-sm flex items-center gap-1">
               <Flame className="w-4 h-4 text-orange-500" />

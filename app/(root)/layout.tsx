@@ -65,7 +65,7 @@ export default async function RootLayout({children}: Readonly<{ children: React.
       }).lean();
       
       // console.log("User:", userDoc);
-      console.log("User Decks:", decks);
+      // console.log("User Decks:", decks);
 
       if (userDoc) {
         userData = {
@@ -77,7 +77,7 @@ export default async function RootLayout({children}: Readonly<{ children: React.
           experience: userDoc.experience || 0,
           totalStudyTime: userDoc.totalStudyTime || 0,
          };
-        //  console.log("4. Objeto userData montado com sucesso:", userData);
+        // console.log("4. Objeto userData montado com sucesso:", userData);
 
         // Serializa os dados para enviar ao Client Component em segurança
         serializedDecks = decks.map(deck => ({
